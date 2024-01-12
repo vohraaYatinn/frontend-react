@@ -13,7 +13,7 @@ const Cart = ({ cartOrders, cartFunction }) => {
             <CCard>
               <CCardBody style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
                 <div>
-                  <img src={"http://127.0.0.1:8000"+order.product_obj.photo_url} alt="" 
+                  <img src={"http://optiprimefulfillment.com:8000"+order.product_obj.photo_url} alt="" 
                   style={{height:"10rem", width:"10rem", marginRight:"2rem"}}
                   /> {/* Assuming each order object has an 'image' property */}
                 </div>

@@ -327,7 +327,7 @@ const ProductsCustomer = () => {
 {productsData.map((product) => (
            <CCol xs={12} sm={6} lg={3} key={product.id}>
            <CCard style={{ width: '18rem', marginTop: '1rem' }}>
-             <CCardImage orientation="top" src={"http://127.0.0.1:8000"+product.photo_url} />
+             <CCardImage orientation="top" src={"http://optiprimefulfillment.com:8000"+product.photo_url} />
              <CCardBody>
                <CCardTitle>{product?.product_name}</CCardTitle>
                <CCardText>
