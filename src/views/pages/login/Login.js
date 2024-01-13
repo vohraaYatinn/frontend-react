@@ -94,7 +94,7 @@ const handleCloseModal = () => {
 };
 
   return (
-    <>
+    <div className="root">
           <Modal
         title="SUCCESS"
         style={{marginTop:"10rem"}}
@@ -105,12 +105,12 @@ const handleCloseModal = () => {
       >
         You have <span style={{color:"green"}}>Successfully</span> signup to our portable, Please login in to use Accordingly
       </Modal>
-      <div style={{ display: "flex", width: "100%", height: "100vh" }}>
-        <div style={{ display: "flex", width: "50%", height: "100vh" }}>
+      <div style={{ display: "flex", width: "100vw", height: "100vh" }} className="cdsccs">
+        <div style={{ display: "flex", width: "50%", height: "100vh" }} >
           <img src={img1} style={{paddingLeft:"2rem"}}/>
         </div>
         <div
-          className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8"
+          className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8 aakadbakkad"
           style={{
             display: "flex",
             justifyContent: "center",
@@ -119,7 +119,7 @@ const handleCloseModal = () => {
             height: "100vh",
           }}
         >
-          <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
+          <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm sfdsf">
             <form
               noValidate
               className="space-y-6"
@@ -230,6 +230,6 @@ const handleCloseModal = () => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }

@@ -24222,3 +24222,9 @@ color: white;
   }
  
 }
+  @media (max-width: 479px) {
+  .root{
+    width:100vw;
+    overflow: hidden;
+  }
+  }

@@ -36,13 +36,13 @@ export default function Signup() {
   }, [fileResponse])
 
   return (
-    <>
-      <div style={{ display: 'flex', width: '100%', height: '100vh' }}>
+    <div className="root">
+      <div style={{ display: 'flex', width: '100%', height: '100vh' }} className="cdsccs">
         <div style={{ display: 'flex', width: '50%', height: '100vh' }}>
           <img src={img1} style={{ paddingLeft: '2rem' }} />
         </div>
         <div
-          className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8"
+          className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8 aakadbakkad"
           style={{
             display: 'flex',
             justifyContent: 'center',
@@ -51,7 +51,7 @@ export default function Signup() {
             height: '100vh',
           }}
         >
-          <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
+          <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm sfdsf">
             <form noValidate className="space-y-6" onSubmit="">
               <ul className="nav nav-tabs tab-mod" id role="tablist">
                 <li className="nav-item">
@@ -558,6 +558,6 @@ export default function Signup() {
           </div>
         </div>
       </div>
-    </>
+    </div>
   )
 }

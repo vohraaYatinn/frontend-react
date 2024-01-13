@@ -2601,3 +2601,26 @@ button.accordion {
 .styled-text ul li:hover:before {
     filter: brightness(120%); /* Adjust brightness on hover */
 }
+
+@media (max-width: 479px) {
+    .root{
+      width:100vw;
+      overflow: hidden;
+    }
+    .aakadbakkad{
+        width: 70vw !important;
+        position: relative;
+        right: 8rem;
+    }
+    .sfdsf{
+        background-color: white;
+        padding: 2rem;
+        width: 60vw;
+        border: 1px solid transparent;
+        border-radius: 30px;
+    }
+    .cdsccs{
+        background: radial-gradient(black, transparent);
+    }
+    }
+    
