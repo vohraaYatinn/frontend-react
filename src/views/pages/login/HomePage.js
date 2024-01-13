@@ -8,11 +8,22 @@ import "./stylestylestyle.css"
 // import "./css/bootstrap.css"
 // import "./css/bootstrap.min.css"
 import logo from "./optiprime.jpeg"
-
+import {cilUser} from  '@coreui/icons'
+import CIcon from "@coreui/icons-react";
 export default function HomePage() {
     const stepsRef = useRef([]);
     const stepsRef2 = useRef([]);
-  
+    const [width, setWidth] = useState(window.innerWidth);
+  const handleWindowSizeChange = () => {
+    setWidth(window.innerWidth);
+  };
+  useEffect(() => {
+    window.addEventListener("resize", handleWindowSizeChange);
+    return () => {
+      window.removeEventListener("resize", handleWindowSizeChange);
+    };
+  }, []);
+  const isMobile = width <= 675;
     useEffect(() => {
       const handleScroll = () => {
         stepsRef.current.forEach((step, index) => {
@@ -748,12 +759,15 @@ export default function HomePage() {
             fs-scrolldisable-element="toggle"
             data-w-id="f67215a3-a884-984e-9b7d-36e0d5acac8f"
             className="menu-icon_component"
+            style={{height:" 90%"}}
+            onClick={()=>{
+              window.open('/#/login', '_blank');
+            }
+            }
           >
-            <div className="menu-icon_line-top" />
-            <div className="menu-icon_line-middle">
-              <div className="menu-icon_line-middle-inner" />
-            </div>
-            <div className="menu-icon_line-bottom" />
+            
+            <CIcon icon={cilUser} customClassName="nav-icon" />
+           
           </div>
         </div>
         <div
@@ -1210,9 +1224,7 @@ export default function HomePage() {
           </div>
         </div>
       </div>
-      <div className="marquee _2">
-      
-      </div>
+  
       <section className="home-hero-section">
         <div className="container-home-hero">
           {/* <div className="trustpilot-embed w-embed">
@@ -1263,7 +1275,7 @@ export default function HomePage() {
                       target="_blank"
           
                       className="icon-btn w-inline-block"
-                      style={{textDecoration:"none", background:"white"}}
+                      style={{textDecoration:"none", background:"white", marginBottom:isMobile&&"2rem"}}
                       data-w-id
                     >
 

@@ -380,7 +380,7 @@ Whatsapp us</CButton>
         </CNavItem>
       </CNav>
       <CTabContent className="rounded-bottom">
-        <CTabPane className="p-3 preview" visible>
+        <CTabPane className="p-3 preview tab-pane-mobile" visible >
           <div>
             <h2 style={{ fontSize: '1.4rem' }}>
               Current Balance: <span style={{ fontSize: '1.8rem' }}>${profile.user_coins.length > 0 ? profile.user_coins[0]?.coin : "N/A"}</span>
@@ -391,12 +391,13 @@ Whatsapp us</CButton>
           </div>
           {navActions == 'topup' &&
           <>
-          <div style={{ width: '80%' , marginTop:"1.5rem"}}>
+          <div style={{ width: '80%' , marginTop:"1.5rem"}} className='red-mobile-input'>
             <CInputGroup>
               <CFormInput
                 aria-label="Dollar amount (with dot and two decimal places)"
                 value={moneyActionForm?.coupon}
                 placeholder='Enter your link to redeem'
+                className='red-amount-inp'
                 onChange={(e) => {
                   setMoneyActionForm((prev) => ({ ...prev, coupon: e.target.value }))
                 }}
@@ -429,7 +430,7 @@ Whatsapp us</CButton>
           <div >
             <h4 style={{marginTop:"1rem", marginBottom:"1rem"}}>Choose from Our Existing Topup Plans</h4>
             <CRow>
-              <CCol xs={12} sm={12} lg={12}>
+              <CCol xs={12} sm={12} lg={12} className='pad-mobile-amount'>
                 <CWidgetStatsB
                 style={{cursor:"pointer"}}
                 onClick={()=>{
@@ -456,7 +457,7 @@ Whatsapp us</CButton>
           {navActions == 'withdraw' &&
           <>
           
-          <div style={{ width: '80%' , marginTop:"2rem"}}>
+          <div style={{ width: '80%' , marginTop:"2rem"}} className='with-mobile-tab'>
             <CInputGroup>
               <CInputGroupText>$</CInputGroupText>
 
@@ -490,7 +491,7 @@ Whatsapp us</CButton>
             </p>
             <CRow>
             <CInputGroup style={{height:"9rem", marginBottom:"1rem"}}>
-                <CInputGroupText>Your Bank Account Details</CInputGroupText>
+                <CInputGroupText className='mobile-bank-amount'>Your Bank Account Details</CInputGroupText>
                 <CFormTextarea aria-label="With textarea"
                 onChange={(e)=>setMoneyActionForm((prev) => ({ ...prev, bankAcc: e.target.value }))
               }

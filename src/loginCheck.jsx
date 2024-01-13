@@ -41,8 +41,8 @@ useEffect(()=>{
   }
 },[response])
   return (
-    <div>loginCheck</div>
-  )
+<></>
+    )
 }
 
 export default LoginCheck
