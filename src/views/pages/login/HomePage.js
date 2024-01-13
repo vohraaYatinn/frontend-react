@@ -8,7 +8,8 @@ import "./stylestylestyle.css"
 // import "./css/bootstrap.css"
 // import "./css/bootstrap.min.css"
 import logo from "./optiprime.jpeg"
-
+import {cilUser} from  '@coreui/icons'
+import CIcon from "@coreui/icons-react";
 export default function HomePage() {
     const stepsRef = useRef([]);
     const stepsRef2 = useRef([]);
@@ -748,12 +749,15 @@ export default function HomePage() {
             fs-scrolldisable-element="toggle"
             data-w-id="f67215a3-a884-984e-9b7d-36e0d5acac8f"
             className="menu-icon_component"
+            style={{height:" 90%"}}
+            onClick={()=>{
+            window.location.href = '/#/login';
+          }
+            }
           >
-            <div className="menu-icon_line-top" />
-            <div className="menu-icon_line-middle">
-              <div className="menu-icon_line-middle-inner" />
-            </div>
-            <div className="menu-icon_line-bottom" />
+            
+            <CIcon icon={cilUser} customClassName="nav-icon" />
+           
           </div>
         </div>
         <div
@@ -1210,9 +1214,7 @@ export default function HomePage() {
           </div>
         </div>
       </div>
-      <div className="marquee _2">
-      
-      </div>
+  
       <section className="home-hero-section">
         <div className="container-home-hero">
           {/* <div className="trustpilot-embed w-embed">
@@ -1407,9 +1409,9 @@ export default function HomePage() {
           data-wf-ignore="true"
           style={{ opacity: 1 }}
           
-          data-poster-url="http://localhost:8000/media/opti.png"
+          data-poster-url="http://optiprimefulfillment.com:8000/media/opti.png"
           data-w-id="eee41a2c-b9d0-7575-acbe-49d294022889"
-          data-video-urls="http://localhost:8000/media/opti.png"
+          data-video-urls="http://optiprimefulfillment.com:8000/media/opti.png"
         >
           <video
             id="eee41a2c-b9d0-7575-acbe-49d294022889-video"
@@ -1417,7 +1419,7 @@ export default function HomePage() {
             loop
             style={{
               backgroundImage:
-                'url("http://localhost:8000/media/opti.png")',
+                'url("http://optiprimefulfillment.com:8000/media/opti.png")',
             }}
             muted
             playsInline
@@ -1559,8 +1561,8 @@ export default function HomePage() {
       >
         <div className="home-hero-video-wrap">
           <div
-            data-poster-url="http://localhost:8000/media/opti.png"
-            data-video-urls="http://localhost:8000/media/opti.png"
+            data-poster-url="http://optiprimefulfillment.com:8000/media/opti.png"
+            data-video-urls="http://optiprimefulfillment.com:8000/media/opti.png"
             data-autoplay="false"
             data-loop="true"
             data-wf-ignore="true"
@@ -1573,7 +1575,7 @@ export default function HomePage() {
               loop
               style={{
                 backgroundImage:
-                  'url("http://localhost:8000/media/opti.png")',
+                  'url("http://optiprimefulfillment.com:8000/media/opti.png")',
               }}
               muted
               playsInline
@@ -1581,11 +1583,11 @@ export default function HomePage() {
               data-object-fit="cover"
             >
               <source
-                src="http://localhost:8000/media/opti.png"
+                src="http://optiprimefulfillment.com:8000/media/opti.png"
                 data-wf-ignore="true"
               />
               <source
-                src="http://localhost:8000/media/opti.png"
+                src="http://optiprimefulfillment.com:8000/media/opti.png"
                 data-wf-ignore="true"
               />
             </video>
