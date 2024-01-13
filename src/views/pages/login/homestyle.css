@@ -107,3 +107,14 @@ display: none !important;
     display: none !important;
 
 }
+
+@media (min-width: 992px) {
+    .home-hero-section{
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)), url('../../../assets/20151009045712-Logistics.jpeg');
+
+        /* background: url("../../../assets/20151009045712-Logistics.jpeg"); */
+        background-size: cover;
+        background-position: center;
+        height: 120%;
+    }
+}

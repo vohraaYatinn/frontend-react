@@ -24172,3 +24172,32 @@ blockquote {
 .p-l center .subtitle-home{
 color: white;
 }
+
+@media (max-width: 479px) {
+
+  .home-hero-section{
+      background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)), url('../../../assets/20151009045712-Logistics.jpeg');
+      padding-top: 2rem;
+      /* background: url("../../../assets/20151009045712-Logistics.jpeg"); */
+      background-size: cover;
+      background-position: center;
+      height: 120%;
+  }
+  .subtitle-home{
+    font-size: 0.8rem;
+    opacity: 1;
+    color: white;
+    margin-bottom: 3rem;
+  }
+}
+@media (max-width: 992px) {
+  .home-hero-section{
+      background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)), url('../../../assets/20151009045712-Logistics.jpeg');
+      padding-top: 2rem;
+      /* background: url("../../../assets/20151009045712-Logistics.jpeg"); */
+      background-size: cover;
+      background-position: center;
+      height: 120%;
+  }
+ 
+}
