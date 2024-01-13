@@ -59,7 +59,7 @@ const AppSidebar = () => {
     <CSidebar
       position="fixed"
       unfoldable={isMobile && false}
-      visible={showAct}
+      visible={isMobile ? showAct : true}
       onVisibleChange={(visible) => {
         dispatch(changeState(visible))
       }}
