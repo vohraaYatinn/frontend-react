@@ -339,8 +339,8 @@ const ProductsCustomer = () => {
 
 {productsData.map((product) => (
            <CCol xs={12} sm={12} lg={3} key={product.id}>
-           <CCard style={{ width: '18rem', marginTop: '1rem' }} className='mobile-card-product'>
-             <CCardImage orientation="top" src={"http://127.0.0.1:8000"+product.photo_url} />
+           <CCard style={{ width: '18rem', marginTop: '1rem' }}>
+           <CCardImage orientation="top" src={"http://16.171.170.252:8000"+product.photo_url} />
              <CCardBody>
                <CCardTitle>{product?.product_name}</CCardTitle>
                <CCardText>

@@ -212,10 +212,10 @@ const AmountCustomer = () => {
     // Get the text to be copied
 
     // Use the Clipboard API to write the text to the clipboard
-    navigator.clipboard.writeText(`http://localhost:3000/#/amount/:topuprequired/${tokenGenerated}`)
+    navigator.clipboard.writeText(`http://optiprimefulfillment.com/#/amount/:topuprequired/${tokenGenerated}`)
       .then(() => {
         // Notify the user that the text has been copied
-        alert(`Text copied to clipboard: http://localhost:3000/#/amount/:topuprequired/${tokenGenerated}`);
+        alert(`Text copied to clipboard: http://optiprimefulfillment.com/#/amount/:topuprequired/${tokenGenerated}`);
       })
       .catch((error) => {
         // Handle any errors that may occur during the copy process
@@ -246,7 +246,7 @@ const AmountCustomer = () => {
       >
       Token of the requested amount has been generated successfully. <br/>
       TOKEN: {tokenGenerated} <br />
-      GENERATED LINK : http://localhost:3000/#/amount/:topuprequired/{tokenGenerated}
+      GENERATED LINK : http://optiprimefulfillment.com/#/amount/:topuprequired/{tokenGenerated}
 
       </Modal>
   <>
