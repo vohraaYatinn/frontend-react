@@ -100,7 +100,7 @@ export const _customer_nav = [
       {
         component: CNavItem,
         name: 'Whatsapp Us',
-        to: 'https://wa.me/+917042414212',
+        to: 'https://wa.me/+31647694329',
       },
    
     ],

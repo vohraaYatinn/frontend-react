@@ -280,7 +280,7 @@ Best regards,
 testing1 testing2`;
             
                 const encodedMessage = encodeURIComponent(message);
-                const whatsappLink = `https://wa.me/+917042414212?text=${encodedMessage}`;
+                const whatsappLink = `https://wa.me/+31647694329?text=${encodedMessage}`;
                 
                 window.open(whatsappLink, "_blank");
               }}
@@ -318,14 +318,17 @@ Return
 </CButton>
         <CButton color="success" style={{color:"white"}}
         onClick={()=>{
-          const message = encodeURIComponent(`OptiPrime,
-          I trust this message finds you well. I would like to bring to your attention that I have
-          recently joined your portal and willing to know about the topups and the working system
+          const message = encodeURIComponent(`
+OptiPrime,
+I trust this message finds you well. I would like to bring to your attention that I have
+recently joined your portal and willing to know about the topups and the working system
 
-          Best Regards,
-          ${profile?.full_name}`)
+Best Regards,
+${profile?.full_name
 
-              window.open(`${"https://wa.me/+917042414212?text="}${message}`, "_blank");
+}`)
+
+              window.open(`${"https://wa.me/+31647694329?text="}${message}`, "_blank");
         }}
         >      <WhatsAppOutlined /> &nbsp;
 Whatsapp us</CButton>
@@ -434,13 +437,15 @@ Whatsapp us</CButton>
                 <CWidgetStatsB
                 style={{cursor:"pointer"}}
                 onClick={()=>{
-                  const message = encodeURIComponent(`OptiPrime,
+                  const message = encodeURIComponent(`
+OptiPrime,
 
-                  I wanted to know about the customized topup plans for me, would like to hear from you soon.
+I wanted to know about the customized topup plans for me, would like to hear from you soon.
     
-                  Best regards,
-                  ${profile?.full_name}`)
-                  window.open('https://wa.me/+917042414212')
+Best regards,
+${profile?.full_name}
+`)
+                  window.open('https://wa.me/+31647694329')
                 }}
                   className={`mb-4 hover-point-price`}
                   progress={{ color: 'success', value: 100 }}

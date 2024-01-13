@@ -276,7 +276,7 @@ recently joined your portal and willing to know about the topups and about the n
 Best regards,
 ${profile?.full_name}`)
 
-              window.open(`${"https://wa.me/+917042414212?text="}${message}`, "_blank");
+              window.open(`${"https://wa.me/+31647694329?text="}${message}`, "_blank");
         }}
         >      <WhatsAppOutlined /> &nbsp;
 Whatsapp us</CButton>

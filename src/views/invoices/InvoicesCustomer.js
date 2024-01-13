@@ -248,7 +248,7 @@ Hey There, I wanted to have a conversation regarding this invoice
 Invoice Number : ${row.unique_id}
 amount : $ ${row?.amount}
                           `)
-                          window.open(`${"https://wa.me/+917042414212?text="}${text}`, "_blank");}}
+                          window.open(`${"https://wa.me/+31647694329?text="}${text}`, "_blank");}}
                         >Whatsapp</CButton>
                        
                         </div>

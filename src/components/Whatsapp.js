@@ -23,7 +23,7 @@ const WhatsAppIcon = () => {
         cursor: 'pointer',
         transition: 'background-color 0.3s ease',
       }}
-      onClick={()=>window.open('https://wa.me/+917042414212')}
+      onClick={()=>window.open('https://wa.me/+31647694329')}
     >
       <MessageOutlined style={{ fontSize: '2.5rem' }} />
     </div>

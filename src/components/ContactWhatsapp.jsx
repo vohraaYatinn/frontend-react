@@ -4,7 +4,7 @@ import React, { useEffect } from 'react'
 
 const ContactWhatsapp = () => {
     useEffect(()=>{
-        window.open('https://wa.me/+917042414212')
+        window.open('https://wa.me/+31647694329')
     },[])
   return (
   <></>
