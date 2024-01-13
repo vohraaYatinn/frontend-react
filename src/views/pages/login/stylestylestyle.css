@@ -24189,6 +24189,27 @@ color: white;
     color: white;
     margin-bottom: 3rem;
   }
+  .value-propositition-section {
+    width: 97vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .ecom-services-section{
+    width: 97vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .faq-section{
+    width: 97vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
 }
 @media (max-width: 992px) {
   .home-hero-section{

@@ -1,6 +1,6 @@
 /* eslint-disable */
 
-import React, { useState, Fragment, useEffect } from "react";
+import React, { useState, Fragment, useEffect, useRef } from "react";
 import "./homestyle.css"
 import "../assets/css/login_style.css"
 import { Link } from "react-router-dom";
@@ -10,6 +10,37 @@ import "./stylestylestyle.css"
 import logo from "./optiprime.jpeg"
 
 export default function HomePage() {
+    const stepsRef = useRef([]);
+    const stepsRef2 = useRef([]);
+  
+    useEffect(() => {
+      const handleScroll = () => {
+        stepsRef.current.forEach((step, index) => {
+          const rect = step.getBoundingClientRect();
+          const isVisible = rect.top <= window.innerHeight * 0.75;
+  
+          if (isVisible) {
+            step.style.border = '1px solid rgb(86, 179, 137)';
+          } 
+        });
+        stepsRef2.current.forEach((step, index) => {
+          const rect = step.getBoundingClientRect();
+          const isVisible = rect.top <= window.innerHeight * 0.75;
+  
+          if (isVisible) {
+            step.style.opacity = '100%';
+          } 
+        });
+        
+      };
+  
+      window.addEventListener('scroll', handleScroll);
+      
+      // Cleanup event listener on component unmount
+      return () => {
+        window.removeEventListener('scroll', handleScroll);
+      };
+    }, []);
   return (
     <>
       <div fs-cc="banner" className="cookie-popup_component">
@@ -1375,9 +1406,10 @@ export default function HomePage() {
           data-beta-bgvideo-upgrade="false"
           data-wf-ignore="true"
           style={{ opacity: 1 }}
-          data-poster-url="https://assets-global.website-files.com/64bfca2ced1b82f490a58a1a/64e604e281df749718a363eb_Showcase video - SP Platform (compressed)-poster-00001.jpg"
+          
+          data-poster-url="http://localhost:8000/media/opti.png"
           data-w-id="eee41a2c-b9d0-7575-acbe-49d294022889"
-          data-video-urls="https://assets-global.website-files.com/64bfca2ced1b82f490a58a1a/64e604e281df749718a363eb_Showcase video - SP Platform (compressed)-transcode.mp4,https://assets-global.website-files.com/64bfca2ced1b82f490a58a1a/64e604e281df749718a363eb_Showcase video - SP Platform (compressed)-transcode.webm"
+          data-video-urls="http://localhost:8000/media/opti.png"
         >
           <video
             id="eee41a2c-b9d0-7575-acbe-49d294022889-video"
@@ -1527,8 +1559,8 @@ export default function HomePage() {
       >
         <div className="home-hero-video-wrap">
           <div
-            data-poster-url="https://assets-global.website-files.com/64bfca2ced1b82f490a58a1a/64e604e281df749718a363eb_Showcase video - SP Platform (compressed)-poster-00001.jpg"
-            data-video-urls="https://assets-global.website-files.com/64bfca2ced1b82f490a58a1a/64e604e281df749718a363eb_Showcase video - SP Platform (compressed)-transcode.mp4,https://assets-global.website-files.com/64bfca2ced1b82f490a58a1a/64e604e281df749718a363eb_Showcase video - SP Platform (compressed)-transcode.webm"
+            data-poster-url="http://localhost:8000/media/opti.png"
+            data-video-urls="http://localhost:8000/media/opti.png"
             data-autoplay="false"
             data-loop="true"
             data-wf-ignore="true"
@@ -1541,7 +1573,7 @@ export default function HomePage() {
               loop
               style={{
                 backgroundImage:
-                  'url("https://assets-global.website-files.com/64bfca2ced1b82f490a58a1a/64e604e281df749718a363eb_Showcase video - SP Platform (compressed)-poster-00001.jpg")',
+                  'url("http://localhost:8000/media/opti.png")',
               }}
               muted
               playsInline
@@ -1549,11 +1581,11 @@ export default function HomePage() {
               data-object-fit="cover"
             >
               <source
-                src="https://assets-global.website-files.com/64bfca2ced1b82f490a58a1a/64e604e281df749718a363eb_Showcase video - SP Platform (compressed)-transcode.mp4"
+                src="http://localhost:8000/media/opti.png"
                 data-wf-ignore="true"
               />
               <source
-                src="https://assets-global.website-files.com/64bfca2ced1b82f490a58a1a/64e604e281df749718a363eb_Showcase video - SP Platform (compressed)-transcode.webm"
+                src="http://localhost:8000/media/opti.png"
                 data-wf-ignore="true"
               />
             </video>
@@ -1882,15 +1914,10 @@ export default function HomePage() {
                 className="home-core-grid-cell _6"
               >
                 <img
-                  src="https://assets-global.website-files.com/64bfca2ced1b82f490a58a1a/64c39e5f8f07c18231d93327_Hoodie%20front.png"
+                  src="https://img.freepik.com/free-photo/portrait-corporate-woman-holding-clipboard-work-standing-formal-outfit-white-background_1258-88411.jpg"
                   loading="lazy"
                   sizes="(max-width: 479px) 93vw, (max-width: 767px) 92vw, (max-width: 991px) 94vw, (max-width: 1279px) 87vw, (max-width: 1439px) 89vw, (max-width: 1919px) 92vw, 97vw"
-                  srcSet="
-            https://assets-global.website-files.com/64bfca2ced1b82f490a58a1a/64c39e5f8f07c18231d93327_Hoodie%20front-p-500.png   500w,
-            https://assets-global.website-files.com/64bfca2ced1b82f490a58a1a/64c39e5f8f07c18231d93327_Hoodie%20front-p-800.png   800w,
-            https://assets-global.website-files.com/64bfca2ced1b82f490a58a1a/64c39e5f8f07c18231d93327_Hoodie%20front-p-1080.png 1080w,
-            https://assets-global.website-files.com/64bfca2ced1b82f490a58a1a/64c39e5f8f07c18231d93327_Hoodie%20front.png        1500w
-          "
+
                   alt="Medewerker van Service Points met hoodie van Service Points"
                   className="home-core-grid-cell-image-full"
                 />
@@ -2112,40 +2139,24 @@ export default function HomePage() {
                 </a>
               </div>
             </div>
-            <div
-              id="w-node-fc6a0475-9885-bc06-4df7-798377e392ed-8c970a94"
-              data-w-id="fc6a0475-9885-bc06-4df7-798377e392ed"
-              style={{ opacity: 1 }}
-              className="ecom-service-visual-wrapper"
-            >
-              <div
-                style={{ height: "0%" }}
-                className="fulfilment-process-line"
-              />
-              <div className="fulfilment-process-step _1">
-                <div className="fulfilment-process-step-text _1">Sourcing</div>
-              </div>
-              <div className="fulfilment-process-step _2">
-                <div className="fulfilment-process-step-text _2">
-                  Bulk purchasing
-                </div>
-              </div>
-              <div className="fulfilment-process-step _3">
-                <div className="fulfilment-process-step-text _3">
-                  Forwarding to fulfillment center
-                </div>
-              </div>
-              <div className="fulfilment-process-step _4">
-                <div className="fulfilment-process-step-text _4">
-                  Shipping and delivery
-                </div>
-              </div>
-              <div className="fulfilment-process-step _5">
-                <div className="fulfilment-process-step-text _5">
-                  Return management
-                </div>
-              </div>
-            </div>
+            <div className="ecom-service-visual-wrapper" style={{ opacity: 1 }}>
+      <div className="fulfilment-process-line" style={{ height: '0%' }}></div>
+      <div className="fulfilment-process-step _1" ref={(el) => (stepsRef.current[0] = el)}>
+        <div className="fulfilment-process-step-text _1" ref={(el) => (stepsRef2.current[0] = el)}>Sourcing</div>
+      </div>
+      <div className="fulfilment-process-step _2" ref={(el) => (stepsRef.current[1] = el)}>
+        <div className="fulfilment-process-step-text _2" ref={(el) => (stepsRef2.current[1] = el)}>Bulk purchasing</div>
+      </div>
+      <div className="fulfilment-process-step _3" ref={(el) => (stepsRef.current[2] = el)}>
+        <div className="fulfilment-process-step-text _3" ref={(el) => (stepsRef2.current[2] = el)}>Forwarding to fulfillment center</div>
+      </div>
+      <div className="fulfilment-process-step _4" ref={(el) => (stepsRef.current[3] = el)}>
+        <div className="fulfilment-process-step-text _4" ref={(el) => (stepsRef2.current[3] = el)}>Shipping and delivery</div>
+      </div>
+      <div className="fulfilment-process-step _5" ref={(el) => (stepsRef.current[4] = el)}>
+        <div className="fulfilment-process-step-text _5" ref={(el) => (stepsRef2.current[4] = el)}>Return management</div>
+      </div>
+    </div>
           </div>
         </div>
       </section>
