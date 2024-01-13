@@ -2608,14 +2608,15 @@ button.accordion {
       overflow: hidden;
     }
     .aakadbakkad{
-        width: 70vw !important;
+        width: 80vw !important;
         position: relative;
-        right: 8rem;
+        right: 11.5rem;
+
     }
     .sfdsf{
         background-color: white;
         padding: 2rem;
-        width: 60vw;
+        width: 80vw !important;
         border: 1px solid transparent;
         border-radius: 30px;
     }
