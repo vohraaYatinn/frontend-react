@@ -10,8 +10,7 @@ const DefaultLayout = () => {
   return (
     
     <div>
-          <WhatsAppIcon />
-
+       <WhatsAppIcon />
       <LoginCheck/> 
       <AppSidebar />
       <div className="wrapper d-flex flex-column min-vh-100 bg-light">

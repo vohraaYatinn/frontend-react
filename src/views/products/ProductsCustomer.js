@@ -61,7 +61,17 @@ const ProductsCustomer = () => {
     email:profile?.email
   });
   const router = useRouter();
-
+  const [width, setWidth] = useState(window.innerWidth);
+  const handleWindowSizeChange = () => {
+    setWidth(window.innerWidth);
+  };
+  useEffect(() => {
+    window.addEventListener("resize", handleWindowSizeChange);
+    return () => {
+      window.removeEventListener("resize", handleWindowSizeChange);
+    };
+  }, []);
+  const isMobile = width <= 675;
   const [message, setMessage] = useState({
     showMessage: false,
     isError:"",
@@ -222,6 +232,7 @@ const ProductsCustomer = () => {
         backdrop="static"
       visible={modalVisible}
       aria-labelledby="StaticBackdropExampleLabel"
+      className='mobile-product'
     >
       <CModalHeader>
         <CModalTitle id="StaticBackdropExampleLabel">
@@ -273,6 +284,8 @@ const ProductsCustomer = () => {
         backdrop="static"
       visible={customerAddressVisible}
       aria-labelledby="StaticBackdropExampleLabel"
+      className='mobile-product-cart'
+
     >
       <CModalHeader>
         <CModalTitle id="StaticBackdropExampleLabel">
@@ -325,8 +338,8 @@ const ProductsCustomer = () => {
       <CRow>
 
 {productsData.map((product) => (
-           <CCol xs={12} sm={6} lg={3} key={product.id}>
-           <CCard style={{ width: '18rem', marginTop: '1rem' }}>
+           <CCol xs={12} sm={12} lg={3} key={product.id}>
+           <CCard style={{ width: '18rem', marginTop: '1rem' }} className='mobile-card-product'>
              <CCardImage orientation="top" src={"http://127.0.0.1:8000"+product.photo_url} />
              <CCardBody>
                <CCardTitle>{product?.product_name}</CCardTitle>
@@ -359,7 +372,7 @@ const ProductsCustomer = () => {
       </CRow>
       
       <Drawer
-        title="Drawer with extra actions"
+        title="Cart"
         placement={'bottom'}
         width={500}
         onClose={onClose}
@@ -376,7 +389,7 @@ const ProductsCustomer = () => {
         </Space>
         }
       >
-       <Cart cartOrders={cartOrders} cartFunction={fetchCustomerQuantity}/>
+       <Cart cartOrders={cartOrders} cartFunction={fetchCustomerQuantity} isMobile={isMobile}/>
       </Drawer>
     </>
   )

@@ -105,11 +105,12 @@ const Dashboard = () => {
     { title: 'Last Topup', value: dashboardCounts?.Insights?.last_topup, percent: 60, color: 'warning' },
     { title: 'Last Withdraw', value: dashboardCounts?.Insights?.last_withdraw, percent: 80, color: 'danger' },  ]
 
-
   return (
+    
     <>
       <WidgetsDropdown dashboardCounts={dashboardCounts}/>
       <Steps
+      className='mobile-steps-track'
       style={{marginBottom:"1rem"}}
     items={[
       {
@@ -153,7 +154,7 @@ const Dashboard = () => {
       {/* <WidgetsBrand withCharts /> */}
      
       <CRow>
-      <CCol xs={8}>
+      <CCol xs={12} sm={6} lg={8}>
         <CCard className="mb-4">
           <CCardHeader>Bar Chart</CCardHeader>
           <CCardBody>
@@ -174,7 +175,7 @@ const Dashboard = () => {
           </CCardBody>
         </CCard>
       </CCol>
-      <CCol xs={4}>
+      <CCol xs={12} sm={6} lg={4}>
         <CCard className="mb-4">
           <CCardHeader>Pie Chart</CCardHeader>
           <CCardBody>

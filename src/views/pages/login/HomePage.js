@@ -13,7 +13,17 @@ import CIcon from "@coreui/icons-react";
 export default function HomePage() {
     const stepsRef = useRef([]);
     const stepsRef2 = useRef([]);
-  
+    const [width, setWidth] = useState(window.innerWidth);
+  const handleWindowSizeChange = () => {
+    setWidth(window.innerWidth);
+  };
+  useEffect(() => {
+    window.addEventListener("resize", handleWindowSizeChange);
+    return () => {
+      window.removeEventListener("resize", handleWindowSizeChange);
+    };
+  }, []);
+  const isMobile = width <= 675;
     useEffect(() => {
       const handleScroll = () => {
         stepsRef.current.forEach((step, index) => {
@@ -751,8 +761,8 @@ export default function HomePage() {
             className="menu-icon_component"
             style={{height:" 90%"}}
             onClick={()=>{
-            window.location.href = '/#/login';
-          }
+              window.open('/#/login', '_blank');
+            }
             }
           >
             
@@ -1265,7 +1275,7 @@ export default function HomePage() {
                       target="_blank"
           
                       className="icon-btn w-inline-block"
-                      style={{textDecoration:"none", background:"white"}}
+                      style={{textDecoration:"none", background:"white", marginBottom:isMobile&&"2rem"}}
                       data-w-id
                     >
 

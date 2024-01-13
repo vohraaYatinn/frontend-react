@@ -10,13 +10,11 @@ import App from './App'
 import reportWebVitals from './reportWebVitals'
 import { Provider } from 'react-redux'
 import store from '../src/redux/Store'
-// import loginCheck from './ loginCheck'
 
 
 createRoot(document.getElementById('root')).render(
   
   <Provider store={store}>
-    {/* <loginCheck/> */}
     <App />
   </Provider>,
 )

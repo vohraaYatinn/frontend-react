@@ -3,25 +3,31 @@ import { CButton, CCard, CCardBody, CCardHeader, CCardText, CCardTitle, CCol, CR
 import { Card } from 'antd';
 import React from 'react';
 
-const Cart = ({ cartOrders, cartFunction }) => {
+const Cart = ({ cartOrders, cartFunction, isMobile }) => {
   return (
-    <div style={{paddingLeft:"20rem"}}>
+    <div style={{paddingLeft:"20rem"}} className='mobile-card-pad'>
 
         {cartOrders.map((order, index) => (
                   <CRow style={{marginTop:"0.5rem"}}>
           <CCol key={index} xs={12} sm={6} lg={10}>
             <CCard>
               <CCardBody style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+              {!isMobile &&
                 <div>
                   <img src={"http://127.0.0.1:8000"+order.product_obj.photo_url} alt="" 
                   style={{height:"10rem", width:"10rem", marginRight:"2rem"}}
                   /> {/* Assuming each order object has an 'image' property */}
-                </div>
+                </div> }
+
                 <div>
                   <CCardTitle>{order.product_obj.product_name}</CCardTitle> {/* Assuming each order object has a 'title' property */}
+                
+                  {!isMobile &&
                   <CCardText>
                     {order.product_obj.description}
-                  </CCardText>
+                  </CCardText>}
+
+
                   <CCardText style={{ fontSize: "1.4rem" }}>
                     $  {order.product_obj.quoted_price * order.quantity}
                   </CCardText>

@@ -16,11 +16,12 @@ import 'simplebar/dist/simplebar.min.css'
 import translogo from "src/components/OPTIPRIMETrans1.png"
 // sidebar nav config
 import {_customer_nav, __admin_nav} from '../_nav'
-import { userDetails } from 'src/redux/reducers/userDetails.reducer'
+import { changeState, sidebarShowAct, userDetails } from 'src/redux/reducers/userDetails.reducer'
 
 
 const AppSidebar = () => {
   const profile = useSelector(userDetails);
+  const showAct = useSelector(sidebarShowAct);
   const [navigation, setNavigation] = useState([]);
 
 
@@ -35,16 +36,32 @@ const AppSidebar = () => {
 
   },[profile])
   const dispatch = useDispatch()
+
   const unfoldable = useSelector((state) => state.sidebarUnfoldable)
   const sidebarShow = useSelector((state) => state.sidebarShow)
-
+  const [setVisible, setVisibleState] = useState(false)
+  const [width, setWidth] = useState(window.innerWidth);
+  const handleWindowSizeChange = () => {
+    setWidth(window.innerWidth);
+  };
+  useEffect(() => {
+    window.addEventListener("resize", handleWindowSizeChange);
+    return () => {
+      window.removeEventListener("resize", handleWindowSizeChange);
+    };
+  }, []);
+  const isMobile = width <= 675;
+  useState(()=>{
+    console.log("dsd", showAct)
+    setVisibleState(showAct)
+  },[showAct])
   return (
     <CSidebar
       position="fixed"
-      unfoldable={unfoldable}
-      visible={sidebarShow}
+      unfoldable={isMobile && false}
+      visible={showAct}
       onVisibleChange={(visible) => {
-        dispatch({ type: 'set', sidebarShow: visible })
+        dispatch(changeState(visible))
       }}
     >
       <CSidebarBrand className="d-none d-md-flex" to="/">

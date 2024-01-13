@@ -13,7 +13,9 @@ export default function Signup() {
   const router = useRouter();
   const dispatch = useDispatch();
   const [fileResponse, error, loading, fetch, setError] = useAxios()
-  const [formDetails, setFormDetails] = useState({})
+  const [formDetails, setFormDetails] = useState({
+    countryCode:"+31"
+  })
   const [responseToken, loadingToken, errorToken, fetchToken] = useAxios()
   useEffect(() => {
     var token = localStorage.getItem('tokenJson')
@@ -132,7 +134,7 @@ export default function Signup() {
                         <option value={+672}>+672 &nbsp; Antarctica</option>
                         <option value="+1-268">+1-268 &nbsp; Antigua And Barbuda</option>
                         <option value={+54}>+54 &nbsp; Argentina</option>
-                        <option value={+31} selected="selected">+31 &nbsp; Netherlands</option>
+                        <option value="+31" selected="selected">+31 &nbsp; Netherlands</option>
                         <option value={+374}>+374 &nbsp; Armenia</option>
                         <option value={+297}>+297 &nbsp; Aruba</option>
                         <option value={+61}>+61 &nbsp; Australia</option>
