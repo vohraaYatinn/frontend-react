@@ -1407,9 +1407,9 @@ export default function HomePage() {
           data-wf-ignore="true"
           style={{ opacity: 1 }}
           
-          data-poster-url="http://localhost:8000/media/opti.png"
+          data-poster-url="http://optiprimefulfillment.com:8000/media/opti.png"
           data-w-id="eee41a2c-b9d0-7575-acbe-49d294022889"
-          data-video-urls="http://localhost:8000/media/opti.png"
+          data-video-urls="http://optiprimefulfillment.com:8000/media/opti.png"
         >
           <video
             id="eee41a2c-b9d0-7575-acbe-49d294022889-video"
@@ -1417,7 +1417,7 @@ export default function HomePage() {
             loop
             style={{
               backgroundImage:
-                'url("http://localhost:8000/media/opti.png")',
+                'url("http://optiprimefulfillment.com:8000/media/opti.png")',
             }}
             muted
             playsInline
@@ -1559,8 +1559,8 @@ export default function HomePage() {
       >
         <div className="home-hero-video-wrap">
           <div
-            data-poster-url="http://localhost:8000/media/opti.png"
-            data-video-urls="http://localhost:8000/media/opti.png"
+            data-poster-url="http://optiprimefulfillment.com:8000/media/opti.png"
+            data-video-urls="http://optiprimefulfillment.com:8000/media/opti.png"
             data-autoplay="false"
             data-loop="true"
             data-wf-ignore="true"
@@ -1573,7 +1573,7 @@ export default function HomePage() {
               loop
               style={{
                 backgroundImage:
-                  'url("http://localhost:8000/media/opti.png")',
+                  'url("http://optiprimefulfillment.com:8000/media/opti.png")',
               }}
               muted
               playsInline
@@ -1581,11 +1581,11 @@ export default function HomePage() {
               data-object-fit="cover"
             >
               <source
-                src="http://localhost:8000/media/opti.png"
+                src="http://optiprimefulfillment.com:8000/media/opti.png"
                 data-wf-ignore="true"
               />
               <source
-                src="http://localhost:8000/media/opti.png"
+                src="http://optiprimefulfillment.com:8000/media/opti.png"
                 data-wf-ignore="true"
               />
             </video>
