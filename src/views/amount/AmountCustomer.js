@@ -470,7 +470,9 @@ ${profile?.full_name}
                 aria-label="Dollar amount (with dot and two decimal places)"
                 value={moneyActionForm?.amount}
                 onChange={(e) => {
+                  if(e.target.value >= 0){
                   setMoneyActionForm((prev) => ({ ...prev, amount: e.target.value }))
+                  }
                 }}
               />
               <CInputGroupText>0.00</CInputGroupText>
@@ -514,6 +516,8 @@ ${profile?.full_name}
           {navActions == 'withdraw' &&
             <CButton
             onClick={()=>navActions == 'withdraw' ? customerWithdrawFunc(): initiatePayment() }
+            disabled={profile.user_coins[0]?.coin < moneyActionForm.amount}
+
             > {navActions == 'withdraw' ? "Withdraw Amount" : "Topup Amount"}</CButton>}
           </div>
         </CTabPane>

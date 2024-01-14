@@ -10,6 +10,8 @@ import "./stylestylestyle.css"
 import logo from "./optiprime.jpeg"
 import {cilUser} from  '@coreui/icons'
 import CIcon from "@coreui/icons-react";
+import optiprime from "./opti.png"
+
 export default function HomePage() {
     const stepsRef = useRef([]);
     const stepsRef2 = useRef([]);
@@ -54,6 +56,7 @@ export default function HomePage() {
     }, []);
   return (
     <>
+    
       <div fs-cc="banner" className="cookie-popup_component">
         <div className="cookie-modal_component">
           <div className="cookie-modal_styles w-embed"></div>
@@ -287,7 +290,7 @@ export default function HomePage() {
             <img
               src={logo}
               loading="lazy"
-              alt="Service Points logo met donkere letters"
+              alt="optiprime logo met donkere letters"
               className="navbar-logo-image"
             />
           </a>
@@ -375,7 +378,7 @@ export default function HomePage() {
                             </div>
                             <div className="navbar-dropdown-link-item">
                               <div className="navbar-dropdown-link-title">
-                                Service Points vs. Private drop ship agent
+                                optiprime vs. Private drop ship agent
                               </div>
                               <div className="p-s">
                                 Compare our platform and functionalities with
@@ -853,7 +856,7 @@ export default function HomePage() {
                             </div>
                             <div className="navbar-dropdown-link-item">
                               <div className="navbar-dropdown-link-title">
-                                Service Points vs. Private dropship agent
+                                optiprime vs. Private dropship agent
                               </div>
                               <div className="p-s">
                                 Evaluate our platform and functionalities in
@@ -1419,31 +1422,23 @@ export default function HomePage() {
           data-wf-ignore="true"
           style={{ opacity: 1 }}
           
-          data-poster-url="http://16.171.170.252:8000/media/opti.png"
+          data-poster-url={optiprime}
           data-w-id="eee41a2c-b9d0-7575-acbe-49d294022889"
-          data-video-urls="http://16.171.170.252:8000/media/opti.png"
+          data-video-urls={optiprime}
         >
           <video
             id="eee41a2c-b9d0-7575-acbe-49d294022889-video"
             autoPlay
             loop
             style={{
-              backgroundImage:
-                'url("http://16.171.170.252:8000/media/opti.png")',
+              backgroundImage:`url(${optiprime})`,
             }}
             muted
             playsInline
             data-wf-ignore="true"
             data-object-fit="cover"
           >
-            {/* <source
-              src="https://assets-global.website-files.com/64bfca2ced1b82f490a58a1a/64e604e281df749718a363eb_Showcase video - SP Platform (compressed)-transcode.mp4"
-              data-wf-ignore="true"
-            />
-            <source
-              src="https://assets-global.website-files.com/64bfca2ced1b82f490a58a1a/64e604e281df749718a363eb_Showcase video - SP Platform (compressed)-transcode.webm"
-              data-wf-ignore="true"
-            /> */}
+    
           </video>
           <div className="home-video-overlay" />
           <div className="home-video-heading-wrapper">
@@ -1571,8 +1566,8 @@ export default function HomePage() {
       >
         <div className="home-hero-video-wrap">
           <div
-            data-poster-url="http://16.171.170.252:8000/media/opti.png"
-            data-video-urls="http://16.171.170.252:8000/media/opti.png"
+            data-poster-url={optiprime}
+            data-video-urls={optiprime}
             data-autoplay="false"
             data-loop="true"
             data-wf-ignore="true"
@@ -1584,8 +1579,7 @@ export default function HomePage() {
               id="58364691-3574-a526-f690-42468bd7d7c9-video"
               loop
               style={{
-                backgroundImage:
-                  'url("http://16.171.170.252:8000/media/opti.png")',
+                backgroundImage:`url(${optiprime})`,
               }}
               muted
               playsInline
@@ -1593,11 +1587,11 @@ export default function HomePage() {
               data-object-fit="cover"
             >
               <source
-                src="http://16.171.170.252:8000/media/opti.png"
+                src={optiprime}
                 data-wf-ignore="true"
               />
               <source
-                src="http://16.171.170.252:8000/media/opti.png"
+                src={optiprime}
                 data-wf-ignore="true"
               />
             </video>
@@ -1930,7 +1924,7 @@ export default function HomePage() {
                   loading="lazy"
                   sizes="(max-width: 479px) 93vw, (max-width: 767px) 92vw, (max-width: 991px) 94vw, (max-width: 1279px) 87vw, (max-width: 1439px) 89vw, (max-width: 1919px) 92vw, 97vw"
 
-                  alt="Medewerker van Service Points met hoodie van Service Points"
+                  alt="Medewerker van optiprime met hoodie van optiprime"
                   className="home-core-grid-cell-image-full"
                 />
               </div>
@@ -2174,7 +2168,7 @@ export default function HomePage() {
       </section>
       {/* <section id="vergelijk" className="comparison-section">
         <div className="container">
-          <h2 className="h2 center">Why choose Service Points?</h2>
+          <h2 className="h2 center">Why choose optiprime?</h2>
           <div className="divider-4" />
           <div className="feature-comparison-wrapper">
             <div className="comparison-scroll-base">
@@ -2197,7 +2191,7 @@ export default function HomePage() {
                         <img
                           src="https://assets-global.website-files.com/64bfca2ced1b82f490a58a1a/64c0197c7fe85b1d38f9ded3_Logo%20with%20text%20-%20Normal.svg"
                           loading="lazy"
-                          alt="Service Points logo met donkere letters"
+                          alt="optiprime logo met donkere letters"
                           className="feature-comparison-sp-logo"
                         />
                         <div className="feature-top-moq-text">10+ MOQ</div>
@@ -2529,7 +2523,7 @@ export default function HomePage() {
                       className="comparison-cell col-2"
                     >
                       <p className="p black comparison">
-                        No fee needs to be paid to Service Points, because they
+                        No fee needs to be paid to optiprime, because they
                         apply profit share with the suppliers
                       </p>
                     </div>
@@ -2538,7 +2532,7 @@ export default function HomePage() {
                       className="comparison-cell col-3"
                     >
                       <p className="p black comparison">
-                        Same fee as Service Points
+                        Same fee as optiprime
                       </p>
                     </div>
                   </div>
@@ -2581,7 +2575,7 @@ export default function HomePage() {
                     className="faq-question"
                   >
                     <h3 className="h3 faq">
-                      Service points possess the capacity to propel me to
+                      optiprime possess the capacity to propel me to
                       greater heights, whereas a supplier/agent lacks the
                       capability to facilitate such advancement.
                     </h3>
@@ -2948,7 +2942,7 @@ export default function HomePage() {
                 <img
                   src="https://assets-global.website-files.com/64bfca2ced1b82f490a58a1a/64c4470f8c52bbd10a9eeced_Logo%20Icon%20-%20Color%20(SVG%20Vector).svg"
                   loading="lazy"
-                  alt="Groen Service Points Logo"
+                  alt="Groen optiprime Logo"
                   className="footer-logo-image"
                 />
               </a>
@@ -3123,7 +3117,7 @@ export default function HomePage() {
         </div>
         <a
           data-w-id="ef5fce28-365b-f4ed-fbea-0b260e5e762f"
-          href="https://api.whatsapp.com/send?phone=7042414212"
+          href="https://wa.me/+31647694329?text=Hey, I want to know something about your service"
           target="_blank"
           className="sticky-contact-btn w-inline-block"
         >
