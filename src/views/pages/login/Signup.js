@@ -23,9 +23,7 @@ export default function Signup() {
       fetchToken(tokenAuth({ jsonToken: token }))
     }
   }, [])
-  useEffect(() => {
-    console.log(formDetails)
-  }, [formDetails])
+
 
   const submitFunction = () => {
     fetch(signUpUser(formDetails))

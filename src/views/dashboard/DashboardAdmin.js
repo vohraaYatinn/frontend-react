@@ -43,7 +43,6 @@ const Dashboard = () => {
   }, [profile]);
   useEffect(() => {
     if (fileResponse?.result == 'success' && fileResponse?.data) {
-      console.log(fileResponse?.data)
       setDashboardCounts((prev) => ({
         ...prev,
         total_orders: fileResponse?.data?.total_orders,

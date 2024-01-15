@@ -165,7 +165,6 @@ const AmountCustomer = () => {
       }
     }
   },[modalVisible, modalVisibleSecond])
-  useEffect(()=>{console.log(moneyActionForm)},[moneyActionForm])
   useEffect(()=>{
     customerDashFunc()
   },[])
@@ -354,7 +353,6 @@ Whatsapp us</CButton>
               id="customRange3"
               style={{ width: '100%', marginTop: '1rem' }}
               onChange={(e) => {
-                console.log(e.target.value)
                 setMoneyActionForm((prev) => ({ ...prev, amount: e.target.value * 1000 }))
               }}
             />          
@@ -393,7 +391,6 @@ Whatsapp us</CButton>
               id="customRange3"
               style={{ width: '100%', marginTop: '1rem' }}
               onChange={(e) => {
-                console.log(e.target.value)
                 setMoneyActionForm((prev) => ({ ...prev, amount: e.target.value * 1000 }))
               }}
             />          </div>

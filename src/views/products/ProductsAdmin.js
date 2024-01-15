@@ -97,9 +97,6 @@ const ProductsAdmin = () => {
     }
     },[productPrice])
 
-    useEffect(()=>{
-      console.log(cartOrders)
-    },[cartOrders])
 
   return (
     <>

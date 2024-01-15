@@ -37,7 +37,6 @@ useEffect(()=>{
 },[sign])
 useEffect(()=>{
   if(responseToken?.result == "success" && responseToken?.loggined_user){
-    console.log("dsds",responseToken?.loggined_user?.role)
     dispatch(updateUserDetails(responseToken?.loggined_user));
     localStorage.setItem('tokenJson', responseToken?.token);
     if(responseToken?.loggined_user?.role == "customer"){
@@ -61,13 +60,11 @@ const [message, setMessage] = useState({
 });
 
 const handleClick = () => {
-  console.log(formDetails)
   fetch(loginUserAdmin(formDetails))
 };
 useEffect(()=>{
   if(fileResponse?.result == "success"){
     if(fileResponse?.data == true){
-      console.log(fileResponse?.loginUser);
         dispatch(updateUserDetails(fileResponse?.loginUser));
         localStorage.setItem('tokenJson', fileResponse?.token);
         if(fileResponse?.loginUser?.role == "customer"){

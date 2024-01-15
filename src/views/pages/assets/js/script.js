@@ -458,15 +458,12 @@ function setQuotationBidTimeLeft_new(obj) {
         $(obj).html(time_left_to_display);
     } else {
         if (time_end > 0) {
-            //console.log("else if");
             time_end = parseInt(time_end) - 1;
             $(obj).data('time_end', time_end);
-            //console.log(time_end);
             time_left_to_display = createTime(time_end);
 
             $(obj).html(time_left_to_display);
         } else {
-            //console.log("else");
             $(obj).html("00:00:00");
         }
     }
@@ -508,11 +505,9 @@ function timeDiffCalc(dateFuture, dateNow) {
     // calculate days
     const days = Math.floor(diffInMilliSeconds / 86400);
     diffInMilliSeconds -= days * 86400;
-    //console.log('calculated days', days);
     // calculate hours
     const hours = parseInt(Math.floor(diffInMilliSeconds / 3600) % 24);
     diffInMilliSeconds -= hours * 3600;
-    // console.log('calculated hours', hours);
 
     // calculate minutes
     const minutes = parseInt(Math.floor(diffInMilliSeconds / 60) % 60);
@@ -521,7 +516,7 @@ function timeDiffCalc(dateFuture, dateNow) {
     // calculate minutes
     const seconds = parseInt(diffInMilliSeconds); // = //Math.floor(diffInMilliSeconds / 60) % 60;
     diffInMilliSeconds -= seconds * 60;
-    // console.log('seconds', seconds);
+
 
     let difference = '';
     if (days > 0) {
@@ -538,9 +533,7 @@ function timeDiffCalc(dateFuture, dateNow) {
 function calculateTime(date_future, date_now) {
     date_future = new Date(date_future);
     date_now = new Date(date_now);
-    //console.log("date_now : " + date_now);
 
-    //return false;
 
     seconds = Math.floor((date_future - (date_now)) / 1000);
     minutes = Math.floor(seconds / 60);
@@ -559,9 +552,6 @@ $(function() {
     return false;
     date_future = new Date(new Date().getFullYear() + 1, 0, 1);
     date_now = new Date();
-
-    //console.log("date_future : " + date_future);
-    //console.log("date_now : " + date_now);
 
     seconds = Math.floor((date_future - (date_now)) / 1000);
     minutes = Math.floor(seconds / 60);
@@ -939,7 +929,6 @@ function redirectBackTo() {
 
 
 $(document).on('click', '.autoTrackingStore', function() {
-    //console.log(this);
     let token = document.querySelector('meta[name=token]').content;
     autotracking = 0;
     if ($(this).is(":checked")) {
@@ -960,7 +949,6 @@ $(document).on('click', '.autoTrackingStore', function() {
             data = $.parseJSON(data);
             var msg = data.msg;
             var successmsg = showSuccessAlert(msg);
-            // console.log(successmsg);
 
         }
     });
@@ -987,7 +975,6 @@ $(document).on('click', '.clientNotification', function() {
             data = $.parseJSON(data);
             var msg = data.msg;
             var successmsg = showSuccessAlert(msg);
-            // console.log(successmsg);
         }
     });
 });

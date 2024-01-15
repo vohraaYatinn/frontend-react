@@ -124,9 +124,7 @@ const ProductsCustomer = () => {
 
   useEffect(()=>{
     if(placeOrderResponse?.result == "success"){
-      console.log(placeOrderResponse)
       if(placeOrderResponse?.coins){
-        console.log("sf")
         dispatch(updateUserCoins(placeOrderResponse?.coins));
       }
       onClose()
@@ -170,9 +168,7 @@ const ProductsCustomer = () => {
       }
   
     },[getCartAfterOrderResponse])
-    useEffect(()=>{
-      console.log(cartOrders)
-    },[cartOrders])
+
     const [modalVisible, setModalVisible] = useState(false);
     const [customerAddressVisible, customerAddressModalVisible] = useState(false);
 

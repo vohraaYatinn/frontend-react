@@ -25,9 +25,7 @@ import { userDetails } from 'src/redux/reducers/userDetails.reducer'
 
 const UsersAdmin = () => {
   const profile = useSelector(userDetails);
-  useEffect(()=>{
-    console.log(profile)
-  },[profile])
+
   const options = [
     {
       label: 'Topup',

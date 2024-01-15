@@ -114,10 +114,6 @@
     <script type="application/javascript">
       function geoip(json) {
         var countrycode = json.country_code;
-
-        console.log(json.country_code);
-        console.log(json.ip);
-
         if (performance.navigation.type === 1) {
           redirectToPreferredLanguage(countrycode);
         }

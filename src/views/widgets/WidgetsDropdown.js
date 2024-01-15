@@ -16,7 +16,6 @@ import CIcon from '@coreui/icons-react'
 import { cilArrowBottom, cilArrowTop, cilOptions } from '@coreui/icons'
 
 const WidgetsDropdown = ({dashboardCounts=false}) => {
-  console.log(dashboardCounts)
   return (
     <CRow>
       <CCol sm={6} lg={3}>

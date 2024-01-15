@@ -8,9 +8,7 @@ import { cilTruck, cilCalendar, cilCart, cilClock, cilCheck } from '@coreui/icon
 import { CChart } from '@coreui/react-chartjs'
 
 const WidgetsBrand = ({ withCharts, data=false }) => {
-  useEffect(()=>{
-    console.log(data)
-  },[data])
+
   const chartOptions = {
     elements: {
       line: {

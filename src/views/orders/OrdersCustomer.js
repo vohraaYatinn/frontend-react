@@ -116,43 +116,9 @@ const OrdersCustomer = () => {
 
   },[responseDash])
   const [orders, setOrders] = useState([]);
-  const random = (min, max) => Math.floor(Math.random() * (max - min + 1) + min)
   const getTotalOrderPrice = (orders) => parseInt(orders.map(order => order.quantity * order.product_obj.quoted_price).reduce((acc, price) => acc + price, 0), 10);
 
-  const tableExample = [
-    {
-      avatar: { src: avatar1, status: 'success' },
-      user: {
-        name: 'Yiorgos Avraamu',
-        new: true,
-        registered: 'Jan 1, 2021',
-      },
-      country: { name: 'USA', flag: cifUs },
-      usage: {
-        value: 50,
-        period: 'Jun 11, 2021 - Jul 10, 2021',
-        color: 'success',
-      },
-      payment: { name: 'Mastercard', icon: cibCcMastercard },
-      activity: '10 sec ago',
-    },
-    {
-      avatar: { src: avatar2, status: 'danger' },
-      user: {
-        name: 'Avram Tarasios',
-        new: false,
-        registered: 'Jan 1, 2021',
-      },
-      country: { name: 'Brazil', flag: cifBr },
-      usage: {
-        value: 22,
-        period: 'Jun 11, 2021 - Jul 10, 2021',
-        color: 'info',
-      },
-      payment: { name: 'Visa', icon: cibCcVisa },
-      activity: '5 minutes ago',
-    }
-  ]
+
   function getStatus(status) {
     switch (status.toLowerCase()) {
       case "pending":
@@ -167,27 +133,8 @@ const OrdersCustomer = () => {
         return -1; // Indicate an unknown status
     }
   }
-  const tableExample2 = [
-    {
-      avatar: { src: avatar1, status: 'success' },
-      user: {
-        name: 'Yiorgos Avraamu',
-        new: true,
-        registered: 'Jan 1, 2021',
-      },
-      country: { name: 'USA', flag: cifUs },
-      usage: {
-        value: 50,
-        period: 'Jun 11, 2021 - Jul 10, 2021',
-        color: 'success',
-      },
-      payment: { name: 'Mastercard', icon: cibCcMastercard },
-      activity: '10 sec ago',
-    }
-  ]
-  useEffect(()=>{
-    console.log(orders)
-  },[orders])
+ 
+ 
   return (
     <>
 
