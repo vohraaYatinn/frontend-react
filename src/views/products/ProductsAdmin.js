@@ -24,6 +24,8 @@ import {
   CRow,
 
 } from '@coreui/react'
+import { test_url } from 'src/config/environment';
+
 import { Alert, Button, Drawer, Input, Radio, Space } from 'antd'
 import ReactImg from 'src/assets/images/react.jpg'
 
