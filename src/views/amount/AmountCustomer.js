@@ -42,47 +42,16 @@ import {
 import { CChartLine } from '@coreui/react-chartjs'
 import { getStyle, hexToRgba } from '@coreui/utils'
 import axios from 'axios';
+import opti from "../invoices/optiprime.jpeg"
 
 import CIcon from '@coreui/icons-react'
 import {
-  cibCcAmex,
-  cibCcApplePay,
-  cibCcMastercard,
-  cibCcPaypal,
-  cibCcStripe,
-  cibCcVisa,
-  cibGoogle,
-  cibFacebook,
-  cibLinkedin,
-  cifBr,
-  cifEs,
-  cifFr,
-  cifIn,
-  cifPl,
-  cifUs,
-  cibTwitter,
-  cilCloudDownload,
-  cilPeople,
-  cilUser,
-  cilUserFemale,
-  cilMediaPlay,
-  cilCode,
   cilArrowCircleTop,
   cilArrowCircleBottom,
-  cilChartPie,
   cilHistory,
   cilPlus
 } from '@coreui/icons'
 
-import avatar1 from 'src/assets/images/avatars/1.jpg'
-import avatar2 from 'src/assets/images/avatars/2.jpg'
-import avatar3 from 'src/assets/images/avatars/3.jpg'
-import avatar4 from 'src/assets/images/avatars/4.jpg'
-import avatar5 from 'src/assets/images/avatars/5.jpg'
-import avatar6 from 'src/assets/images/avatars/6.jpg'
-
-import WidgetsBrand from '../widgets/WidgetsBrand'
-import WidgetsDropdown from '../widgets/WidgetsDropdown'
 import { useDispatch, useSelector } from 'react-redux'
 import { updateUserCoins, userDetails } from 'src/redux/reducers/userDetails.reducer'
 import { paymentCustomerDashboard, paymentCustomerWithdraw, paymentCustomerRedeem } from 'src/urls/urls'
@@ -90,18 +59,12 @@ import useAxios from 'src/network/useAxios';
 import { Alert, Button, Modal } from 'antd';
 import { useParams } from 'react-router-dom';
 import { useRouter } from 'src/hooks/use-router';
-import PDFComponent from 'src/components/PDFComponent';
 import convertToPDF from 'src/components/convertToPdf';
+import moment from 'moment';
 
 const AmountCustomer = () => {
   const profile = useSelector(userDetails);
   const router = useRouter();
-
-  // useEffect(()=>{
-  //   if(profile.user_coins.length > 0 && profile.user_coins[0]?.coin < 1000){
-  //     router.push('/amount/:topuprequired');
-  //   }
-  // },[])
 
   const [message, setMessage] = useState({
     showMessage: false,
@@ -136,9 +99,6 @@ const AmountCustomer = () => {
   },[top])
 
 
-
-
-
   // useAxios
   const [customerDashResponse, customerDashError, customerDashLoading, customerDashFetch] = useAxios();
 
@@ -152,9 +112,103 @@ const AmountCustomer = () => {
   const dispatch = useDispatch();
   const [dynamicData, setDynamicData] = useState('Dynamic content here');
   const handleConvertToPDF = (response) => {
-    const htmlContent = `<div id="pdf-container"><div class="main-content"><img src="/static/media/paid.017369e94c412123dd85.webp" class="img-paid"><div class="section-1"><div class="section-1-header"><h1>INVOICE</h1><div class="text-inside-sec1"><b>OPTIPRIME</b><p>15 Sheikh Zayed Road, Office 302
-    </p><p>Dubai, United Arab Emirates
-    1</p></div></div><div class="logo-img"><img src="/static/media/optiprime.a06e0a4653069c405514.jpeg" alt="Img not available"></div></div><div class="section-2"><div class="sec-2-bill"><b>BILL TO</b><p>${profile?.full_name}</p><p>${profile?.user[0]?.company_address}</p></div><div class="sec-2-detail"><ul><b><li>Invoice #</li></b><b><li>Invoice Date</li></b><b><li>Status</li></b></ul><ul><li>${response?.file_name}</li><li>11/02/2023</li><li>Paid</li></ul></div></div><div class="section-3"><table><tr><th>QTY</th><th>DESCRIPTION</th><th>TIME</th><th>UNIT PRICE</th></tr><tr><td>1</td><td>Top-up made through net banking</td><td>${response?.created_at}</td><td>$ ${response?.amount}</td></tr></table></div><div class="section-4"><div><h3>TOTAL</h3><p>${response?.file_name}</p></div></div><hr></div></div>`
+    const htmlContent = `<div class="card invoice-preview-card">
+    <div class="card-body">
+      <div class="d-flex justify-content-between flex-xl-row flex-md-column flex-sm-row flex-column">
+        <div class="mb-xl-0 pb-3">
+        <div class="d-flex svg-illustration align-items-center gap-2 mb-4">
+        <span class="app-brand-logo demo" />
+          <img src=${opti} alt="Materio Logo" style="width: 20rem;" />
+        </span>
+      </div>
+          <p class="mb-1">44, Chung Hau Street,</p>
+          <p class="mb-1">Hongkong, New territories,</p>
+          <p class="mb-0">Tseung Kwan O, HK (HKG)</p>
+        </div>
+        <div class="mt-4">
+          <h4 class="fw-medium text-capitalize pb-1 text-nowrap">INVOICE</h4>
+          <h6>#${response?.file_name}</h6>
+          <div class="mb-1">
+            <span>Date Issues:</span>
+            <span>${moment(response?.created_at).format('MMMM DD, YYYY  -  HH:mm:ss')}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr class="my-0">
+    <div class="card-body">
+      <div class="d-flex justify-content-between flex-wrap">
+        <div class="my-3 me-3">
+          <h6>Invoice To:</h6>
+          <p class="mb-1">${profile?.full_name}</p>
+          <p class="mb-1">${profile?.user[0]?.company_address}</p>
+          <p class="mb-1">${profile?.phone}</p>
+        </div>
+
+      </div>
+    </div>
+    <div class="table-responsive">
+      <table class="table table-borderless m-0">
+        <thead class="border-top">
+          <tr>
+            <th>Item</th>
+            <th>Description</th>
+        
+            <th>Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="text-nowrap text-heading">TOPUP AMOUNT</td>
+            <td class="text-nowrap">Amount Has been Credited to the account</td>
+  
+
+            <td>$${response?.amount}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <hr class="my-0">
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-6 mb-md-0 mb-3">
+          <div>
+            <p class="mb-2">
+            </p>
+          
+          </div>
+        </div>
+        <div class="col-md-6 d-flex justify-content-md-end mt-2">
+          <div class="invoice-calculations">
+            <div class="d-flex justify-content-between mb-2">
+              <span class="w-px-100">Discount:</span>
+              <h6 class="mb-0 pt-1">$00.00</h6>
+            </div>
+            <div class="d-flex justify-content-between mb-2">
+              <span class="w-px-100">Tax:</span>
+              <h6 class="mb-0 pt-1">$00.00</h6>
+            </div>
+            <hr>
+            <div class="d-flex justify-content-between">
+              <span class="w-px-100">Total:</span>
+              <h6 class="mb-0 pt-1">$${response?.amount}</h6>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr class="my-0">
+
+    <div class="card-body">
+      <div class="row">
+        <div class="col-12">
+          <span class="fw-medium">Note:</span>
+          <span>It was a pleasure working with you and your team. We hope you will keep us in mind for future freelance
+            projects. Thank You!</span>
+        </div>
+      </div>
+    </div>
+  </div>`
     convertToPDF(htmlContent, 'Invoice.pdf');
     handleOpenModal()
 
@@ -335,15 +389,7 @@ Whatsapp us</CButton>
       </CModalFooter>
     </CModal>
   </>
-        {/* <Modal
-        style={{marginTop:"10rem"}}
-        title="Alert"
-        visible={modalVisibleSecond}
-        onCancel={handleCloseModalSecond}
-        width={800} // Adjust width as needed
-      >
-       To Access our premium features, Your account must be above $1000, please topup your balance accordingly.
-      </Modal> */}
+       
       {message.showMessage && (
         <div style={{ marginBottom: '1rem' }}>
           {' '}
@@ -413,19 +459,7 @@ Whatsapp us</CButton>
               The funds you deposit can be effortlessly withdrawn, and any withdrawn amount will be transferred to your bank account within 12 business days.
               </p>
             </CInputGroup>
-            {/* <input
-              type="range"
-              min={0}
-              max={10}
-              step={1}
-              defaultValue="7"
-              id="customRange3"
-              style={{ width: '100%', marginTop: '1rem' }}
-              onChange={(e) => {
-                console.log(e.target.value)
-                setMoneyActionForm((prev) => ({ ...prev, amount: e.target.value * 1000 }))
-              }}
-            />           */}
+        
             </div>
           <div style={{ width: '70%' }}>
             <p style={{ textAlign: 'center' }}>Or</p>

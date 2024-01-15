@@ -29,6 +29,8 @@ export class Urls {
     static FETCH_INQUIRY_DASHBOARD = Urls.MPHRMS_API_PREFIX + 'orders/fetch-pending-query/';
     static ACTION_INQUIRY_ADMIN = Urls.MPHRMS_API_PREFIX + 'orders/action-pending-query/';
     static PLACE_CUSTOMER_ORDER = Urls.MPHRMS_API_PREFIX + 'orders/place-customer-order/';
+    static USER_AMOUNT_CHANGE = Urls.MPHRMS_API_PREFIX + 'coins/user-amount-change/';
+
 
 
     //coins
@@ -37,6 +39,7 @@ export class Urls {
     static COINS_FETCH_USER = Urls.MPHRMS_API_PREFIX + 'coins/coins-fetch-user/';
     static ADMIN_COINS_REQUEST = Urls.MPHRMS_API_PREFIX + 'coins/coins-fetch-admin/';
     static WALLET_ADMIN_DETAILS = Urls.MPHRMS_API_PREFIX + 'coins/wallet-admin-details/';
+    static CHANGE_REQUEST_STATUS = Urls.MPHRMS_API_PREFIX + 'coins/withdraw-request-status/';
 
 
     //products management

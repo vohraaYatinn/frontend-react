@@ -3,14 +3,7 @@
 import React, { useEffect, useState } from 'react'
 
 import {
-  CAvatar,
-  CButton,
-  CButtonGroup,
   CCard,
-  CCardBody,
-  CCardFooter,
-  CCardHeader,
-  CCol,
   CProgress,
   CRow,
   CTable,
@@ -20,44 +13,24 @@ import {
   CTableHeaderCell,
   CTableRow,
 } from '@coreui/react'
-import { CChartLine } from '@coreui/react-chartjs'
-import { getStyle, hexToRgba } from '@coreui/utils'
-import CIcon from '@coreui/icons-react'
 import {
-  cibCcAmex,
-  cibCcApplePay,
   cibCcMastercard,
-  cibCcPaypal,
-  cibCcStripe,
   cibCcVisa,
-  cibGoogle,
-  cibFacebook,
-  cibLinkedin,
   cifBr,
-  cifEs,
-  cifFr,
-  cifIn,
-  cifPl,
   cifUs,
-  cibTwitter,
-  cilCloudDownload,
-  cilPeople,
-  cilUser,
-  cilUserFemale,
 } from '@coreui/icons'
 
 import avatar1 from 'src/assets/images/avatars/1.jpg'
 import avatar2 from 'src/assets/images/avatars/2.jpg'
 
 import WidgetsBrand from '../widgets/WidgetsBrand'
-import WidgetsDropdown from '../widgets/WidgetsDropdown'
 import useAxios from 'src/network/useAxios'
 import { useSelector } from 'react-redux'
 import { userDetails } from 'src/redux/reducers/userDetails.reducer'
-import { adminOrderActions, fetchAdminOrders, fetchCustomerOrdersDash } from 'src/urls/urls'
+import { adminOrderActions, fetchAdminOrders, fetchAllOrdersAdmin } from 'src/urls/urls'
 import { useRouter } from 'src/hooks/use-router'
 
-const OrdersCustomer = () => {
+const OrdersAdmin = () => {
   const [fileResponse, error, loading, fetch] = useAxios();
   const [responseAction, errorAction, loadingAction, fetchActionOrder] = useAxios();
   const [responseDash, errorDash, loadingDash, fetchOrderDash] = useAxios();
@@ -69,15 +42,20 @@ const OrdersCustomer = () => {
   })
   const router = useRouter();
   useEffect(()=>{
-    if(profile.user_coins.length > 0 && profile.user_coins[0]?.coin < 1000){
+    if(profile.user_coins.length > 0 && profile.user_coins[0]?.coin < 100){
       router.push('/amount/:topuprequired');
     }
   },[])
+  const [message, setMessage] = useState({
+    showMessage: false,
+    isError:"",
+    message:""
+  });
   const fetchAllOrders = () => {
     fetch(fetchAdminOrders({ email: profile?.email }));
   };
   const fetchAllOrdersDash = (ation) => {
-    fetchOrderDash(fetchCustomerOrdersDash({ email: profile?.email}));
+    fetchOrderDash(fetchAllOrdersAdmin({ email: profile?.email}));
   };
 
 
@@ -119,40 +97,7 @@ const OrdersCustomer = () => {
   const random = (min, max) => Math.floor(Math.random() * (max - min + 1) + min)
   const getTotalOrderPrice = (orders) => parseInt(orders.map(order => order.quantity * order.product_obj.quoted_price).reduce((acc, price) => acc + price, 0), 10);
 
-  const tableExample = [
-    {
-      avatar: { src: avatar1, status: 'success' },
-      user: {
-        name: 'Yiorgos Avraamu',
-        new: true,
-        registered: 'Jan 1, 2021',
-      },
-      country: { name: 'USA', flag: cifUs },
-      usage: {
-        value: 50,
-        period: 'Jun 11, 2021 - Jul 10, 2021',
-        color: 'success',
-      },
-      payment: { name: 'Mastercard', icon: cibCcMastercard },
-      activity: '10 sec ago',
-    },
-    {
-      avatar: { src: avatar2, status: 'danger' },
-      user: {
-        name: 'Avram Tarasios',
-        new: false,
-        registered: 'Jan 1, 2021',
-      },
-      country: { name: 'Brazil', flag: cifBr },
-      usage: {
-        value: 22,
-        period: 'Jun 11, 2021 - Jul 10, 2021',
-        color: 'info',
-      },
-      payment: { name: 'Visa', icon: cibCcVisa },
-      activity: '5 minutes ago',
-    }
-  ]
+
   function getStatus(status) {
     switch (status.toLowerCase()) {
       case "pending":
@@ -167,27 +112,7 @@ const OrdersCustomer = () => {
         return -1; // Indicate an unknown status
     }
   }
-  const tableExample2 = [
-    {
-      avatar: { src: avatar1, status: 'success' },
-      user: {
-        name: 'Yiorgos Avraamu',
-        new: true,
-        registered: 'Jan 1, 2021',
-      },
-      country: { name: 'USA', flag: cifUs },
-      usage: {
-        value: 50,
-        period: 'Jun 11, 2021 - Jul 10, 2021',
-        color: 'success',
-      },
-      payment: { name: 'Mastercard', icon: cibCcMastercard },
-      activity: '10 sec ago',
-    }
-  ]
-  useEffect(()=>{
-    console.log(orders)
-  },[orders])
+
   return (
     <>
 
@@ -235,12 +160,24 @@ const OrdersCustomer = () => {
                       <div style={{marginTop:"1rem"}}>
                         
                         <CProgress thin color={"primary"} value={getStatus(item.status)}/>
-                        <div style={{display:"flex", justifyContent:"space-between", marginBottom:"2rem"}}>
+                        <div style={{display:"flex", justifyContent:"space-between"}}>
                         <p>Placed</p>
                           <p>Packed</p>
                           <p>Shipped</p>
                           <p>Delivered</p>
 
+                        </div>
+                        <div>
+                        <select id="status" name="status"  style={{marginBottom:"2rem"}} value={item.status} 
+                        onChange={(e)=>
+                          fetchActionOrder(adminOrderActions({lineId:item.id, status:e.target.value}))
+                        }
+                        >
+                      <option value="pending">Placed</option>
+                      <option value="packed">Packed</option>
+                      <option value="shipped">Shipped</option>
+                      <option value="delivered">Deliver</option>
+                        </select>
                         </div>
                       </div>
                     
@@ -265,4 +202,4 @@ const OrdersCustomer = () => {
   )
 }
 
-export default OrdersCustomer
+export default OrdersAdmin

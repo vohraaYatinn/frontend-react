@@ -18,6 +18,7 @@ import { updateUserDetails } from "src/redux/reducers/userDetails.reducer";
 
 export default function Login() {
   const { sign } = useParams();
+  localStorage.setItem('refresh', 1);
 
   const [fileResponse, error, loading, fetch, setError] = useAxios()
   const [responseToken, loadingToken, errorToken, fetchToken] = useAxios();

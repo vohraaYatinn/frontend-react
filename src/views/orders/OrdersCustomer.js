@@ -69,7 +69,7 @@ const OrdersCustomer = () => {
   })
   const router = useRouter();
   useEffect(()=>{
-    if(profile.user_coins.length > 0 && profile.user_coins[0]?.coin < 1000){
+    if(profile.user_coins.length > 0 && profile.user_coins[0]?.coin < 100){
       router.push('/amount/:topuprequired');
     }
   },[])

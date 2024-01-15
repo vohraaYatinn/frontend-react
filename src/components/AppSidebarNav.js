@@ -19,7 +19,7 @@ export const AppSidebarNav = ({ items }) => {
         {icon && icon}
         {name && name}
 
-        {badge && profile.user_coins.length > 0 && profile.user_coins[0]?.coin < 1000 && (
+        {badge && profile.user_coins.length > 0 && profile.user_coins[0]?.coin < 100 && (
           <CBadge color={badge.color} className="ms-auto">
             {badge.text}
           </CBadge>

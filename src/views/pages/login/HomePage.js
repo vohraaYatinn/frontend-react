@@ -54,6 +54,9 @@ export default function HomePage() {
         window.removeEventListener('scroll', handleScroll);
       };
     }, []);
+    const [toggleAnswers, setToggleAnswers] = useState({
+
+    })
   return (
     <>
     
@@ -2573,8 +2576,9 @@ export default function HomePage() {
                   <div
                     data-w-id="24cf6492-7af0-e9c8-15e0-7f24cb06ebde"
                     className="faq-question"
+                    onClick={()=>setToggleAnswers((prev)=>({...prev, toggle1:!toggleAnswers?.toggle1}))}
                   >
-                    <h3 className="h3 faq">
+                    <h3 className="h3 faq" >
                       optiprime possess the capacity to propel me to
                       greater heights, whereas a supplier/agent lacks the
                       capability to facilitate such advancement.
@@ -2586,7 +2590,7 @@ export default function HomePage() {
                       </div>
                     </div>
                   </div>
-                  <div style={{ height: "0px" }} className="faq-answer">
+                  <div className="faq-answer" style={{height:toggleAnswers?.toggle1 ? "15rem" :"0rem"}}>
                     <div className="styled-text w-richtext">
                       <p>
                         The supply chain dynamics within the realm of
@@ -2615,6 +2619,8 @@ export default function HomePage() {
                   style={{ opacity: 1 }}
                   role="listitem"
                   className="faq-accordion w-dyn-item"
+                  onClick={()=>setToggleAnswers((prev)=>({...prev, toggle2:!toggleAnswers?.toggle2}))}
+
                 >
                   <div
                     data-w-id="24cf6492-7af0-e9c8-15e0-7f24cb06ebde"
@@ -2631,7 +2637,7 @@ export default function HomePage() {
                       </div>
                     </div>
                   </div>
-                  <div style={{ height: "0px" }} className="faq-answer">
+                  <div style={{height:toggleAnswers?.toggle2 ? "17rem" :"0rem"}} className="faq-answer">
                     <div className="styled-text w-richtext">
                       <p>
                         Engaging with our services offers a distinctive
@@ -2669,6 +2675,8 @@ export default function HomePage() {
                   <div
                     data-w-id="24cf6492-7af0-e9c8-15e0-7f24cb06ebde"
                     className="faq-question"
+                    onClick={()=>setToggleAnswers((prev)=>({...prev, toggle3:!toggleAnswers?.toggle3}))}
+
                   >
                     <h3 className="h3 faq">
                       Our services cater to novices in dropshipping without
@@ -2681,7 +2689,7 @@ export default function HomePage() {
                       </div>
                     </div>
                   </div>
-                  <div style={{ height: "0px" }} className="faq-answer">
+                  <div style={{height:toggleAnswers?.toggle3 ? "10rem" :"0rem"}} className="faq-answer">
                     <div className="styled-text w-richtext">
                       <p>
                         Our minimum daily order threshold stands at 10,
@@ -2709,6 +2717,8 @@ export default function HomePage() {
                   <div
                     data-w-id="24cf6492-7af0-e9c8-15e0-7f24cb06ebde"
                     className="faq-question"
+                    onClick={()=>setToggleAnswers((prev)=>({...prev, toggle4:!toggleAnswers?.toggle4}))}
+
                   >
                     <h3 className="h3 faq">
                       How can you guarantee such a fast processing time and
@@ -2721,7 +2731,7 @@ export default function HomePage() {
                       </div>
                     </div>
                   </div>
-                  <div style={{ height: "0px" }} className="faq-answer">
+                  <div style={{height:toggleAnswers?.toggle4 ? "9rem" :"0rem"}} className="faq-answer">
                     <div className="styled-text w-richtext">
                       <p>
                         Given our collaboration with premier suppliers, we
@@ -2748,6 +2758,8 @@ export default function HomePage() {
                   <div
                     data-w-id="24cf6492-7af0-e9c8-15e0-7f24cb06ebde"
                     className="faq-question"
+                    onClick={()=>setToggleAnswers((prev)=>({...prev, toggle5:!toggleAnswers?.toggle5}))}
+
                   >
                     <h3 className="h3 faq">Which countries can you ship to?</h3>
                     <div className="faq-icon-wrapper">
@@ -2757,7 +2769,7 @@ export default function HomePage() {
                       </div>
                     </div>
                   </div>
-                  <div style={{ height: "0px" }} className="faq-answer">
+                  <div style={{height:toggleAnswers?.toggle5 ? "4rem" :"0rem"}} className="faq-answer">
                     <div className="styled-text w-richtext">
                       <p>We can ship worldwide.</p>
                     </div>
@@ -2774,6 +2786,8 @@ export default function HomePage() {
                   <div
                     data-w-id="24cf6492-7af0-e9c8-15e0-7f24cb06ebde"
                     className="faq-question"
+                    onClick={()=>setToggleAnswers((prev)=>({...prev, toggle6:!toggleAnswers?.toggle6}))}
+
                   >
                     <h3 className="h3 faq">What products do you all have?</h3>
                     <div className="faq-icon-wrapper">
@@ -2783,7 +2797,7 @@ export default function HomePage() {
                       </div>
                     </div>
                   </div>
-                  <div style={{ height: "0px" }} className="faq-answer">
+                  <div style={{height:toggleAnswers?.toggle6 ? "9rem" :"0rem"}} className="faq-answer">
                     <div className="styled-text w-richtext">
                       <p>
                         Essentially, our capacity extends to the provision of
@@ -2808,6 +2822,8 @@ export default function HomePage() {
                   <div
                     data-w-id="24cf6492-7af0-e9c8-15e0-7f24cb06ebde"
                     className="faq-question"
+                    onClick={()=>setToggleAnswers((prev)=>({...prev, toggle7:!toggleAnswers?.toggle7}))}
+
                   >
                     <h3 className="h3 faq">
                       Is it bad if I don't sell anything for a period?
@@ -2819,7 +2835,7 @@ export default function HomePage() {
                       </div>
                     </div>
                   </div>
-                  <div style={{ height: "0px" }} className="faq-answer">
+                  <div style={{height:toggleAnswers?.toggle7 ? "4rem" :"0rem"}} className="faq-answer">
                     <div className="styled-text w-richtext">
                       <p>
                         No supplementary charges will be applied on our end.
@@ -2838,6 +2854,8 @@ export default function HomePage() {
                   <div
                     data-w-id="24cf6492-7af0-e9c8-15e0-7f24cb06ebde"
                     className="faq-question"
+                    onClick={()=>setToggleAnswers((prev)=>({...prev, toggle8:!toggleAnswers?.toggle8}))}
+
                   >
                     <h3 className="h3 faq">
                       There are no associated costs for the registration
@@ -2850,7 +2868,7 @@ export default function HomePage() {
                       </div>
                     </div>
                   </div>
-                  <div style={{ height: "0px" }} className="faq-answer">
+                  <div style={{height:toggleAnswers?.toggle8 ? "10rem" :"0rem"}} className="faq-answer">
                     <div className="styled-text w-richtext">
                       <p>
                         Registration for our fulfillment services is entirely

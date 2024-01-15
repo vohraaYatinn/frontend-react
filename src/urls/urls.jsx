@@ -29,6 +29,10 @@ export const dashboardFetchDetails = (payload_data) => {
 export const userFetchDetails = (payload_data) => {
   return project.get(Urls.CUSTOMER_FETCH_DETAILS, payload_data);
 };
+export const userAmountDetails = (payload_data) => {
+  return project.post(Urls.USER_AMOUNT_CHANGE, payload_data);
+};
+
 
 
 
@@ -120,6 +124,9 @@ export const paymentVerification = (payload_data) => {
 };
 export const adminWalletDetails = (payload_data) => {
   return project.get(Urls.WALLET_ADMIN_DETAILS, payload_data);
+};
+export const changeRequestStatus = (payload_data) => {
+  return project.post(Urls.CHANGE_REQUEST_STATUS, payload_data);
 };
 export const tokenGeneration = (payload_data) => {
   return project.post(Urls.TOKEN_GENERATION, payload_data);

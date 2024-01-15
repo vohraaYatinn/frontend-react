@@ -60,15 +60,110 @@ import moment from 'moment'
 import { useSelector } from 'react-redux'
 import { userDetails } from 'src/redux/reducers/userDetails.reducer'
 import convertToPDF from 'src/components/convertToPdf'
+import opti from "./optiprime.jpeg"
 
 const InvoiceAdmin = () => {
   const profile = useSelector(userDetails);
 
 
   const handleConvertToPDF = (paymentCheck) => {
-    const htmlContent = `<div id="pdf-container"><div class="main-content"><img src="/static/media/paid.017369e94c412123dd85.webp" class="img-paid"><div class="section-1"><div class="section-1-header"><h1>INVOICE</h1><div class="text-inside-sec1"><b>OPTIPRIME</b><p>15 Sheikh Zayed Road, Office 302
-    </p><p>Dubai, United Arab Emirates
-    1</p></div></div><div class="logo-img"><img src="/static/media/optiprime.a06e0a4653069c405514.jpeg" alt="Img not available"></div></div><div class="section-2"><div class="sec-2-bill"><b>BILL TO</b><p>${paymentCheck?.user?.full_name}</p><p>${paymentCheck?.user?.user[0]?.company_address}</p></div><div class="sec-2-detail"><ul><b><li>Invoice #</li></b><b><li>Invoice Date</li></b><b><li>Status</li></b></ul><ul><li>${paymentCheck?.unique_id}</li><li>11/02/2023</li><li>Paid</li></ul></div></div><div class="section-3"><table><tr><th>QTY</th><th>DESCRIPTION</th><th>TIME</th><th>UNIT PRICE</th></tr><tr><td>1</td><td>Top-up made through net banking</td><td>${paymentCheck?.created_at}</td><td>$ ${paymentCheck?.amount}</td></tr></table></div><div class="section-4"><div><h3>TOTAL</h3><p>${paymentCheck?.file_name}</p></div></div><hr></div></div>`
+    const htmlContent = `<div class="card invoice-preview-card">
+    <div class="card-body">
+      <div class="d-flex justify-content-between flex-xl-row flex-md-column flex-sm-row flex-column">
+        <div class="mb-xl-0 pb-3">
+        <div class="d-flex svg-illustration align-items-center gap-2 mb-4">
+        <span class="app-brand-logo demo" />
+          <img src=${opti} alt="Materio Logo" style="width: 20rem;" />
+        </span>
+      </div>
+          <p class="mb-1">44, Chung Hau Street,</p>
+          <p class="mb-1">Hongkong, New territories,</p>
+          <p class="mb-0">Tseung Kwan O, HK (HKG)</p>
+        </div>
+        <div class="mt-4">
+          <h4 class="fw-medium text-capitalize pb-1 text-nowrap">INVOICE</h4>
+          <h6>#${paymentCheck?.unique_id}</h6>
+          <div class="mb-1">
+            <span>Date Issues:</span>
+            <span>${moment(paymentCheck?.created_at).format('MMMM DD, YYYY  -  HH:mm:ss')}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr class="my-0">
+    <div class="card-body">
+      <div class="d-flex justify-content-between flex-wrap">
+        <div class="my-3 me-3">
+          <h6>Invoice To:</h6>
+          <p class="mb-1">${profile?.full_name}</p>
+          <p class="mb-1">${profile?.user[0]?.company_address}</p>
+          <p class="mb-1">${profile?.phone}</p>
+        </div>
+
+      </div>
+    </div>
+    <div class="table-responsive">
+      <table class="table table-borderless m-0">
+        <thead class="border-top">
+          <tr>
+            <th>Item</th>
+            <th>Description</th>
+        
+            <th>Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="text-nowrap text-heading">TOPUP AMOUNT</td>
+            <td class="text-nowrap">Amount Has been Credited to the account</td>
+  
+
+            <td>$${paymentCheck?.amount}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <hr class="my-0">
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-6 mb-md-0 mb-3">
+          <div>
+            <p class="mb-2">
+            </p>
+          
+          </div>
+        </div>
+        <div class="col-md-6 d-flex justify-content-md-end mt-2">
+          <div class="invoice-calculations">
+            <div class="d-flex justify-content-between mb-2">
+              <span class="w-px-100">Discount:</span>
+              <h6 class="mb-0 pt-1">$00.00</h6>
+            </div>
+            <div class="d-flex justify-content-between mb-2">
+              <span class="w-px-100">Tax:</span>
+              <h6 class="mb-0 pt-1">$00.00</h6>
+            </div>
+            <hr>
+            <div class="d-flex justify-content-between">
+              <span class="w-px-100">Total:</span>
+              <h6 class="mb-0 pt-1">$${paymentCheck?.amount}</h6>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr class="my-0">
+
+    <div class="card-body">
+      <div class="row">
+        <div class="col-12">
+          <span class="fw-medium">Note:</span>
+          <span>It was a pleasure working with you and your team. We hope you will keep us in mind for future freelance
+            projects. Thank You!</span>
+        </div>
+      </div>
+    </div>
+  </div>`
     convertToPDF(htmlContent, 'Invoice.pdf');
 
   }

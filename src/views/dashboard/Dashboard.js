@@ -3,9 +3,6 @@ import React, { useEffect, useState } from 'react'
 import { LoadingOutlined, SmileOutlined, DollarCircleOutlined, UserOutlined, ShoppingCartOutlined } from '@ant-design/icons';
 
 import {
-  CAvatar,
-  CButton,
-  CButtonGroup,
   CCard,
   CCardBody,
   CCardFooter,
@@ -13,47 +10,8 @@ import {
   CCol,
   CProgress,
   CRow,
-  CTable,
-  CTableBody,
-  CTableDataCell,
-  CTableHead,
-  CTableHeaderCell,
-  CTableRow,
 } from '@coreui/react'
-import { CChartBar, CChartLine, CChartPie } from '@coreui/react-chartjs'
-import { getStyle, hexToRgba } from '@coreui/utils'
-import CIcon from '@coreui/icons-react'
-import {
-  cibCcAmex,
-  cibCcApplePay,
-  cibCcMastercard,
-  cibCcPaypal,
-  cibCcStripe,
-  cibCcVisa,
-  cibGoogle,
-  cibFacebook,
-  cibLinkedin,
-  cifBr,
-  cifEs,
-  cifFr,
-  cifIn,
-  cifPl,
-  cifUs,
-  cibTwitter,
-  cilCloudDownload,
-  cilPeople,
-  cilUser,
-  cilUserFemale,
-} from '@coreui/icons'
-
-import avatar1 from 'src/assets/images/avatars/1.jpg'
-import avatar2 from 'src/assets/images/avatars/2.jpg'
-import avatar3 from 'src/assets/images/avatars/3.jpg'
-import avatar4 from 'src/assets/images/avatars/4.jpg'
-import avatar5 from 'src/assets/images/avatars/5.jpg'
-import avatar6 from 'src/assets/images/avatars/6.jpg'
-
-import WidgetsBrand from '../widgets/WidgetsBrand'
+import { CChartBar, CChartPie } from '@coreui/react-chartjs'
 import WidgetsDropdown from '../widgets/WidgetsDropdown'
 import { Steps } from 'antd'
 import useAxios from 'src/network/useAxios';
@@ -63,9 +21,14 @@ import { dashboardFetchDetails } from 'src/urls/urls';
 
 const Dashboard = () => {
   const profile = useSelector(userDetails);
+  const refresh = localStorage.getItem('refresh');
   useEffect(()=>{
-    console.log(profile)
-  },[profile])
+    if (refresh && refresh == 1){
+      localStorage.setItem('refresh', 2);
+      window.location.reload();
+    }
+  })
+
   const [fileResponse, error, loading, fetch] = useAxios();
   const fetchDashboardData = () => {
     if(profile?.email) fetch(dashboardFetchDetails({ email: profile?.email }));
@@ -109,6 +72,7 @@ const Dashboard = () => {
     
     <>
       <WidgetsDropdown dashboardCounts={dashboardCounts}/>
+     {profile.user_coins.length > 0 && profile.user_coins[0]?.coin <= 100 &&
       <Steps
       className='mobile-steps-track'
       style={{marginBottom:"1rem"}}
@@ -135,6 +99,8 @@ const Dashboard = () => {
       },
     ]}
   />
+}
+
       <CCard className="mb-4">
         <CCardFooter>
           <CRow xs={{ cols: 1 }} md={{ cols: 4 }} className="text-center">
