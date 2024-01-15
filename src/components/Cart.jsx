@@ -2,6 +2,7 @@
 import { CButton, CCard, CCardBody, CCardHeader, CCardText, CCardTitle, CCol, CRow } from '@coreui/react';
 import { Card } from 'antd';
 import React from 'react';
+import { test_url } from 'src/config/environment';
 
 const Cart = ({ cartOrders, cartFunction, isMobile }) => {
   return (
@@ -14,7 +15,7 @@ const Cart = ({ cartOrders, cartFunction, isMobile }) => {
               <CCardBody style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
               {!isMobile &&
                 <div>
-                  <img src={"http://16.171.170.252:8000"+order.product_obj.photo_url} alt="" 
+                  <img src={test_url.slice(0, -1)+order.product_obj.photo_url} alt="" 
                   style={{height:"10rem", width:"10rem", marginRight:"2rem"}}
                   /> {/* Assuming each order object has an 'image' property */}
                 </div> }

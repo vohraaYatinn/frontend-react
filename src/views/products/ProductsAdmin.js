@@ -182,7 +182,7 @@ Submit
 {productsData.map((product) => (
            <CCol xs={12} sm={6} lg={3} key={product.id}>
            <CCard style={{ width: '18rem', marginTop: '1rem' }}>
-             <CCardImage orientation="top" src={"http://16.171.170.252:8000"+product.photo_url} />
+             <CCardImage orientation="top" src={test_url.slice(0, -1)+product.photo_url} />
              <CCardBody>
                <CCardTitle>{product?.product_name}</CCardTitle>
                <CCardText>
