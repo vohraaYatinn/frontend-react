@@ -368,9 +368,8 @@ Return
         <CButton color="success" style={{color:"white"}}
         onClick={()=>{
           const message = encodeURIComponent(`
-OptiPrime,
-I trust this message finds you well. I would like to bring to your attention that I have
-recently joined your portal and willing to know about the topups and the working system
+Hi,
+I would like to bring to your attention that I have recently joined your portal and I am willing to know about doing a product quotation and the process of working with OptiPrime.
 
 Best Regards,
 ${profile?.full_name
@@ -449,7 +448,7 @@ Whatsapp us</CButton>
                {navActions == 'topup' &&
             <CButton
             onClick={()=>navActions == 'withdraw' ? customerWithdrawFunc(): initiatePayment() }
-            > {navActions == 'withdraw' ? "Withdraw Amount" : "Redeem Coupon"}</CButton>}
+            > {navActions == 'withdraw' ? "Withdraw Amount" : "Redeem Link"}</CButton>}
               <p style={{color:"#a0550c", marginTop:"1rem"}}>
               The funds you deposit can be effortlessly withdrawn, and any withdrawn amount will be transferred to your bank account within 12 business days.
               </p>
@@ -467,15 +466,15 @@ Whatsapp us</CButton>
                 style={{cursor:"pointer"}}
                 onClick={()=>{
                   const message = encodeURIComponent(`
-OptiPrime,
+Hi,
 
-I wanted to know about the customized topup plans for me, would like to hear from you soon.
+I wanted to know more about the service (top-up credit) plans for me, I would like to hear from you soon.
     
 Best regards,
 ${profile?.full_name}
 `)
-                  window.open('https://wa.me/+31647694329')
-                }}
+window.open(`${"https://wa.me/+31647694329?text="}${message}`, "_blank");
+}}
                   className={`mb-4 hover-point-price`}
                   progress={{ color: 'success', value: 100 }}
                   text="We will provide the best suitable for you"
@@ -522,7 +521,7 @@ ${profile?.full_name}
           <div >
             <h4 style={{marginTop:"3rem", marginBottom:"1rem"}}>Update your Bank Account Details</h4>
             <p style={{marginTop:"-1rem"}}>Please enter the details of your bank account in which you want 
-            your Balance to be credit in.
+            your Balance to be Credited.
             </p>
             <CRow>
             <CInputGroup style={{height:"9rem", marginBottom:"1rem"}}>

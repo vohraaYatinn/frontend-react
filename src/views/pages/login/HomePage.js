@@ -2561,8 +2561,7 @@ export default function HomePage() {
       </section> */}
       <section className="faq-section">
         <div className="container center">
-          <h2 className="h2 center">Frequently Asked Questions</h2>
-          <div className="divider-4" />
+          <h2 className="h2 center" style={{marginBottom:"1rem"}}>Frequently Asked Questions</h2>
           <div className="faq-component">
             <div className="faq-sort-script w-embed w-script"></div>
             <div className="faq-component w-dyn-list">
@@ -2590,7 +2589,7 @@ export default function HomePage() {
                       </div>
                     </div>
                   </div>
-                  <div className="faq-answer" style={{height:toggleAnswers?.toggle1 ? "15rem" :"0rem"}}>
+                  <div className="faq-answer" style={{height:toggleAnswers?.toggle1 ? "fit-content" :"0rem"}}>
                     <div className="styled-text w-richtext">
                       <p>
                         The supply chain dynamics within the realm of
@@ -2637,7 +2636,7 @@ export default function HomePage() {
                       </div>
                     </div>
                   </div>
-                  <div style={{height:toggleAnswers?.toggle2 ? "17rem" :"0rem"}} className="faq-answer">
+                  <div style={{height:toggleAnswers?.toggle2 ? "fit-content" :"0rem"}} className="faq-answer">
                     <div className="styled-text w-richtext">
                       <p>
                         Engaging with our services offers a distinctive
@@ -2689,7 +2688,7 @@ export default function HomePage() {
                       </div>
                     </div>
                   </div>
-                  <div style={{height:toggleAnswers?.toggle3 ? "10rem" :"0rem"}} className="faq-answer">
+                  <div style={{height:toggleAnswers?.toggle3 ? "fit-content" :"0rem"}} className="faq-answer">
                     <div className="styled-text w-richtext">
                       <p>
                         Our minimum daily order threshold stands at 10,
@@ -2731,7 +2730,7 @@ export default function HomePage() {
                       </div>
                     </div>
                   </div>
-                  <div style={{height:toggleAnswers?.toggle4 ? "9rem" :"0rem"}} className="faq-answer">
+                  <div style={{height:toggleAnswers?.toggle4 ? "fit-content" :"0rem"}} className="faq-answer">
                     <div className="styled-text w-richtext">
                       <p>
                         Given our collaboration with premier suppliers, we
@@ -2769,7 +2768,7 @@ export default function HomePage() {
                       </div>
                     </div>
                   </div>
-                  <div style={{height:toggleAnswers?.toggle5 ? "4rem" :"0rem"}} className="faq-answer">
+                  <div style={{height:toggleAnswers?.toggle5 ? "fit-content" :"0rem"}} className="faq-answer">
                     <div className="styled-text w-richtext">
                       <p>We can ship worldwide.</p>
                     </div>
@@ -2797,7 +2796,7 @@ export default function HomePage() {
                       </div>
                     </div>
                   </div>
-                  <div style={{height:toggleAnswers?.toggle6 ? "9rem" :"0rem"}} className="faq-answer">
+                  <div style={{height:toggleAnswers?.toggle6 ? "fit-content" :"0rem"}} className="faq-answer">
                     <div className="styled-text w-richtext">
                       <p>
                         Essentially, our capacity extends to the provision of
@@ -2835,7 +2834,7 @@ export default function HomePage() {
                       </div>
                     </div>
                   </div>
-                  <div style={{height:toggleAnswers?.toggle7 ? "4rem" :"0rem"}} className="faq-answer">
+                  <div style={{height:toggleAnswers?.toggle7 ? "fit-content" :"0rem"}} className="faq-answer">
                     <div className="styled-text w-richtext">
                       <p>
                         No supplementary charges will be applied on our end.
@@ -2868,7 +2867,7 @@ export default function HomePage() {
                       </div>
                     </div>
                   </div>
-                  <div style={{height:toggleAnswers?.toggle8 ? "10rem" :"0rem"}} className="faq-answer">
+                  <div style={{height:toggleAnswers?.toggle8 ? "fit-content" :"0rem"}} className="faq-answer">
                     <div className="styled-text w-richtext">
                       <p>
                         Registration for our fulfillment services is entirely
@@ -2952,49 +2951,7 @@ export default function HomePage() {
       >
         <div className="container">
           <div className="w-layout-grid footer-top-wrapper">
-            <div
-              id="w-node-_24f8ec1e-9c40-7c9d-243c-a8ab31f5aa16-31f5aa13"
-              className="footer-left-wrapper"
-            >
-              <a href="#" className="footer-logo-link w-nav-brand">
-                <img
-                  src="https://assets-global.website-files.com/64bfca2ced1b82f490a58a1a/64c4470f8c52bbd10a9eeced_Logo%20Icon%20-%20Color%20(SVG%20Vector).svg"
-                  loading="lazy"
-                  alt="Groen optiprime Logo"
-                  className="footer-logo-image"
-                />
-              </a>
-              <div className="footer-details-wrapper">
-                <p className="footer-col-title" />
-                <div className="divider-2" />
-                <a href="#" className="footer-link contact w-inline-block">
-                  <div className="icon-wrap small mmmoooo black">
-                    <img
-                      src="https://assets-global.website-files.com/64bfca2ced1b82f490a58a1a/64c039c2d276b09b3f5fe661_icon-mail.svg"
-                      loading="lazy"
-                      alt="Groen icoontje voor mail"
-                      className="icon _50"
-                    />
-                  </div>
-                  <div className="footer-link-text padding-left" />
-                </a>
-                <a
-                  href="#"
-                  target="_blank"
-                  className="footer-link contact w-inline-block"
-                >
-                  <div className="icon-wrap small mmmoooo black">
-                    <img
-                      src="https://assets-global.website-files.com/64bfca2ced1b82f490a58a1a/64c7c39f537f6929b2a867d4_whatsapp.svg"
-                      loading="lazy"
-                      alt="Groen icoontje van Whatsapp"
-                      className="icon _50"
-                    />
-                  </div>
-                  <div className="footer-link-text padding-left" />
-                </a>
-              </div>
-            </div>
+  
             <div
               id="w-node-_24f8ec1e-9c40-7c9d-243c-a8ab31f5aa2f-31f5aa13"
               className="w-layout-grid uui-footer03_menu-wrapper"
@@ -3135,7 +3092,7 @@ export default function HomePage() {
         </div>
         <a
           data-w-id="ef5fce28-365b-f4ed-fbea-0b260e5e762f"
-          href="https://wa.me/+31647694329?text=Hey, I want to know something about your service"
+          href="https://wa.me/+31647694329?text=Hi, I would like to know more about working with OptiPrime"
           target="_blank"
           className="sticky-contact-btn w-inline-block"
         >

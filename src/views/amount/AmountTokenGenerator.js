@@ -211,10 +211,10 @@ const AmountCustomer = () => {
     // Get the text to be copied
 
     // Use the Clipboard API to write the text to the clipboard
-    navigator.clipboard.writeText(`http://optiprimefulfillment.com/#/amount/:topuprequired/${tokenGenerated}`)
+    navigator.clipboard.writeText(`${tokenGenerated}`)
       .then(() => {
         // Notify the user that the text has been copied
-        alert(`Text copied to clipboard: http://optiprimefulfillment.com/#/amount/:topuprequired/${tokenGenerated}`);
+        alert(`Text copied to clipboard: ${tokenGenerated}`);
       })
       .catch((error) => {
         // Handle any errors that may occur during the copy process
@@ -268,9 +268,8 @@ const AmountCustomer = () => {
         <CButton color="success" style={{color:"white"}}
         onClick={()=>{
           const message = encodeURIComponent(`
-OptiPrime,
-I trust this message finds you well. I would like to bring to your attention that I have
-recently joined your portal and willing to know about the topups and about the next steps 
+Hi,
+I would like to bring to your attention that I have recently joined your portal and I am willing to know about doing a product quotation and the process of working with OptiPrime.
 
 Best regards,
 ${profile?.full_name}`)
@@ -398,7 +397,7 @@ Whatsapp us</CButton>
           <div >
             <h4 style={{marginTop:"3rem", marginBottom:"1rem"}}>Update your Bank Account Details</h4>
             <p style={{marginTop:"-1rem"}}>Please enter the details of your bank account in which you want 
-            your Balance to be credit in.
+            your Balance to be Credited.
             </p>
             <CRow>
             <CInputGroup style={{height:"9rem", marginBottom:"1rem"}}>

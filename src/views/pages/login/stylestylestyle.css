@@ -4142,7 +4142,6 @@ blockquote {
   justify-content: space-between;
   align-items: flex-start;
   padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
   display: flex;
 }
 .faq-accordion {
@@ -4273,7 +4272,6 @@ blockquote {
   display: block;
 }
 .footer-left-wrapper {
-  background-color: #0f0f0f;
   background-image: url(https://assets-global.website-files.com/64bfca2ced1b82f490a58a1a/64c3cc3cb84ffcc9b36205ed_right%20corner%20circles%20\(
         transparant\
       ).png),
@@ -4287,7 +4285,7 @@ blockquote {
   grid-column-gap: 5rem;
   grid-row-gap: 2rem;
   grid-template-rows: auto;
-  grid-template-columns: 0.25fr 3fr;
+  grid-template-columns: 3fr;
   justify-content: space-between;
   align-items: center;
   justify-items: start;

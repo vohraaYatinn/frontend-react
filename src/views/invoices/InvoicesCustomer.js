@@ -216,7 +216,8 @@ const InvoiceCustomer = () => {
                         <CButton variant={"outline"} color={"success"}
                         onClick={()=>{
                           const text = encodeURIComponent(`
-Hey There, I wanted to have a conversation regarding this invoice 
+Hi, 
+I wanted to have a conversation regarding this invoice 
 Invoice Number : ${row.unique_id}
 amount : $ ${row?.amount}
                           `)
