@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunk_coreui_coreui_free_react_admin_template=self.webpackChunk_coreui_coreui_free_react_admin_template||[]).push([[7820],{7820:(e,t,a)=>{a.r(t),a.d(t,{default:()=>c});var r=a(29867),_=a(92834);const c=()=>((0,r.useEffect)((()=>{window.open("https://wa.me/+31647694329")}),[]),(0,_.jsx)(_.Fragment,{}))}}]);
-//# sourceMappingURL=7820.e06a52c8.chunk.js.map

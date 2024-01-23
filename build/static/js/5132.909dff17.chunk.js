@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunk_coreui_coreui_free_react_admin_template=self.webpackChunk_coreui_coreui_free_react_admin_template||[]).push([[5132],{15132:(e,t,r)=>{r.r(t),r.d(t,{default:()=>u});var a=r(29867),c=r(2526),o=r(92834);const u=()=>{const e=(0,c.t)();return(0,a.useEffect)((()=>{localStorage.removeItem("tokenJson"),e.push("/login")}),[]),(0,o.jsx)(o.Fragment,{})}}}]);
-//# sourceMappingURL=5132.909dff17.chunk.js.map
