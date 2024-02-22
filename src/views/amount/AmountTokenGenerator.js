@@ -245,7 +245,7 @@ const AmountCustomer = () => {
       >
       Token of the requested amount has been generated successfully. <br/>
       TOKEN: {tokenGenerated} <br />
-      GENERATED LINK : http://optiprimefulfillment.com/#/amount/:topuprequired/{tokenGenerated}
+      GENERATED LINK : https://www.optiprimefulfillment.com/#/amount/:topuprequired/{tokenGenerated}
 
       </Modal>
   <>
