@@ -1,4 +1,3 @@
 /* eslint-disable */
-// export const test_url = 'https://apprelease-41a6d9550faa.herokuapp.com/';
-export const test_url = 'https://api.optiprimefulfillment.com/';
-                                   
+export const test_url = 'http://145.14.158.251:8000/';
+// export const test_url = 'https://api.optiprimefulfillment.com/';
